@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AF0CBEB2AB46B8400639B39 /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0CBEA2AB46B8400639B39 /* MerchantView.swift */; };
+		4AF0CBED2AB46B9000639B39 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0CBEC2AB46B9000639B39 /* CouponView.swift */; };
+		4AF0CBEF2AB46B9D00639B39 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0CBEE2AB46B9D00639B39 /* Food.swift */; };
+		4AF0CBF12AB46BA500639B39 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0CBF02AB46BA500639B39 /* FoodViewModel.swift */; };
+		4AF0CBF32AB46C4E00639B39 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0CBF22AB46C4E00639B39 /* AddFoodView.swift */; };
 		A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261722AB1E7FE00E6628A /* TinFoodApp.swift */; };
 		A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261742AB1E7FE00E6628A /* ContentView.swift */; };
 		A16261772AB1E7FF00E6628A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16261762AB1E7FF00E6628A /* Assets.xcassets */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AF0CBEA2AB46B8400639B39 /* MerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
+		4AF0CBEC2AB46B9000639B39 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
+		4AF0CBEE2AB46B9D00639B39 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		4AF0CBF02AB46BA500639B39 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		4AF0CBF22AB46C4E00639B39 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		A162616F2AB1E7FE00E6628A /* TinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16261722AB1E7FE00E6628A /* TinFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinFoodApp.swift; sourceTree = "<group>"; };
 		A16261742AB1E7FE00E6628A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +66,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AF0CBE82AB46AE500639B39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0CBEA2AB46B8400639B39 /* MerchantView.swift */,
+				4AF0CBEC2AB46B9000639B39 /* CouponView.swift */,
+				4AF0CBF22AB46C4E00639B39 /* AddFoodView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4AF0CBE92AB46AF100639B39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0CBEE2AB46B9D00639B39 /* Food.swift */,
+				4AF0CBF02AB46BA500639B39 /* FoodViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A16261662AB1E7FD00E6628A = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +104,8 @@
 		A16261712AB1E7FE00E6628A /* TinFood */ = {
 			isa = PBXGroup;
 			children = (
+				4AF0CBE92AB46AF100639B39 /* Model */,
+				4AF0CBE82AB46AE500639B39 /* View */,
 				A16261722AB1E7FE00E6628A /* TinFoodApp.swift */,
 				A1F358C12AB1EBD000BAC75D /* GoogleService-Info.plist */,
 				A16261742AB1E7FE00E6628A /* ContentView.swift */,
@@ -179,8 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF0CBEB2AB46B8400639B39 /* MerchantView.swift in Sources */,
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
+				4AF0CBF12AB46BA500639B39 /* FoodViewModel.swift in Sources */,
+				4AF0CBEF2AB46B9D00639B39 /* Food.swift in Sources */,
+				4AF0CBED2AB46B9000639B39 /* CouponView.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
+				4AF0CBF32AB46C4E00639B39 /* AddFoodView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
