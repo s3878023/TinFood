@@ -23,6 +23,10 @@
 		A1F358D52AB2255200BAC75D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A1F358D42AB2255200BAC75D /* FirebaseMessaging */; };
 		A1F358D72AB2255200BAC75D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A1F358D62AB2255200BAC75D /* FirebaseStorage */; };
 		A1F358D92AB2255200BAC75D /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A1F358D82AB2255200BAC75D /* FirebaseStorageCombine-Community */; };
+		E7BC5C422AB4237900624C74 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC5C412AB4237900624C74 /* Home.swift */; };
+		E7BC5C442AB4239900624C74 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC5C432AB4239900624C74 /* Shop.swift */; };
+		E7BC5C462AB423AD00624C74 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC5C452AB423AD00624C74 /* homeViewModel.swift */; };
+		E7BC5C482AB423CA00624C74 /* stackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC5C472AB423CA00624C74 /* stackCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		A16261762AB1E7FF00E6628A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A16261792AB1E7FF00E6628A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A1F358C12AB1EBD000BAC75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7BC5C412AB4237900624C74 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E7BC5C432AB4239900624C74 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		E7BC5C452AB423AD00624C74 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
+		E7BC5C472AB423CA00624C74 /* stackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 		A16261712AB1E7FE00E6628A /* TinFood */ = {
 			isa = PBXGroup;
 			children = (
+				E7BC5C412AB4237900624C74 /* Home.swift */,
+				E7BC5C472AB423CA00624C74 /* stackCardView.swift */,
+				E7BC5C452AB423AD00624C74 /* homeViewModel.swift */,
+				E7BC5C432AB4239900624C74 /* Shop.swift */,
 				A16261722AB1E7FE00E6628A /* TinFoodApp.swift */,
 				A1F358C12AB1EBD000BAC75D /* GoogleService-Info.plist */,
 				A16261742AB1E7FE00E6628A /* ContentView.swift */,
@@ -180,7 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
+				E7BC5C422AB4237900624C74 /* Home.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
+				E7BC5C462AB423AD00624C74 /* homeViewModel.swift in Sources */,
+				E7BC5C442AB4239900624C74 /* Shop.swift in Sources */,
+				E7BC5C482AB423CA00624C74 /* stackCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
