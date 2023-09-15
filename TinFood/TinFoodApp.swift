@@ -15,7 +15,7 @@ struct TinFoodApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SlidingTabView()
         }
     }
 }
