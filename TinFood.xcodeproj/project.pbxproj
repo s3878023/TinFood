@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AE207F02AB6B02300BA8D1A /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207ED2AB6B02300BA8D1A /* CouponView.swift */; };
+		4AE207F12AB6B02300BA8D1A /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */; };
+		4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */; };
+		4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */; };
+		4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F52AB6B03400BA8D1A /* Food.swift */; };
 		A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261722AB1E7FE00E6628A /* TinFoodApp.swift */; };
 		A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261742AB1E7FE00E6628A /* ContentView.swift */; };
 		A16261772AB1E7FF00E6628A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16261762AB1E7FF00E6628A /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AE207ED2AB6B02300BA8D1A /* CouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
+		4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
+		4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		4AE207F52AB6B03400BA8D1A /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		A162616F2AB1E7FE00E6628A /* TinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16261722AB1E7FE00E6628A /* TinFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinFoodApp.swift; sourceTree = "<group>"; };
 		A16261742AB1E7FE00E6628A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +100,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AE207EC2AB6B00A00BA8D1A /* Merchant */ = {
+			isa = PBXGroup;
+			children = (
+				4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */,
+				4AE207ED2AB6B02300BA8D1A /* CouponView.swift */,
+				4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */,
+			);
+			path = Merchant;
+			sourceTree = "<group>";
+		};
+		4AE207F32AB6B02A00BA8D1A /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				4AE207F52AB6B03400BA8D1A /* Food.swift */,
+				4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
 		A16261662AB1E7FD00E6628A = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +161,7 @@
 		CED850F82AB4496A00147E90 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4AE207EC2AB6B00A00BA8D1A /* Merchant */,
 				E7A115EC2AB6A8A600D36374 /* Swipe */,
 				CED850FD2AB4499300147E90 /* AdminViews */,
 			);
@@ -141,6 +171,7 @@
 		CED850F92AB4497100147E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AE207F32AB6B02A00BA8D1A /* Food */,
 				CED850FC2AB4498C00147E90 /* AdminModel */,
 			);
 			path = Model;
@@ -288,16 +319,21 @@
 			files = (
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
 				CED851082AB44A3C00147E90 /* HomeView.swift in Sources */,
+				4AE207F02AB6B02300BA8D1A /* CouponView.swift in Sources */,
 				CED850FF2AB449C300147E90 /* UserModel.swift in Sources */,
 				E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */,
+				4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */,
 				E7A115F22AB6A8F300D36374 /* Home.swift in Sources */,
 				CED851122AB44AB200147E90 /* SearchBarView.swift in Sources */,
 				CED8510E2AB44A8700147E90 /* ScndView.swift in Sources */,
 				CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */,
 				CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */,
+				4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */,
 				CED8510A2AB44A5E00147E90 /* AppBarView.swift in Sources */,
 				CED851042AB44A0100147E90 /* HomeViewModel.swift in Sources */,
+				4AE207F12AB6B02300BA8D1A /* MerchantView.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
+				4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */,
 				CED851102AB44A9B00147E90 /* ThirdView.swift in Sources */,
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,
 				E7A115F42AB6A90800D36374 /* Shop.swift in Sources */,
