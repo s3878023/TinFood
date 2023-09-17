@@ -171,7 +171,10 @@
 		CED850F92AB4497100147E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+      Admin-UI
+				E7A115F32AB6A90800D36374 /* Shop.swift */,
 				4AE207F32AB6B02A00BA8D1A /* Food */,
+      dev
 				CED850FC2AB4498C00147E90 /* AdminModel */,
 			);
 			path = Model;
@@ -180,6 +183,7 @@
 		CED850FA2AB4497D00147E90 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */,
 				CED850FB2AB4498500147E90 /* AdminVM */,
 			);
 			path = ViewModel;
@@ -222,10 +226,8 @@
 		E7A115EC2AB6A8A600D36374 /* Swipe */ = {
 			isa = PBXGroup;
 			children = (
-				E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */,
 				E7A115F12AB6A8F300D36374 /* Home.swift */,
 				E7A115EF2AB6A8D900D36374 /* stackCardView.swift */,
-				E7A115F32AB6A90800D36374 /* Shop.swift */,
 			);
 			path = Swipe;
 			sourceTree = "<group>";
