@@ -36,6 +36,10 @@
 		CED851162AB44ADC00147E90 /* BanOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851152AB44ADC00147E90 /* BanOptionView.swift */; };
 		CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851192AB44E3C00147E90 /* MerchantRowView.swift */; };
 		CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8511B2AB452D500147E90 /* AllUserRowView.swift */; };
+		E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */; };
+		E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115EF2AB6A8D900D36374 /* stackCardView.swift */; };
+		E7A115F22AB6A8F300D36374 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F12AB6A8F300D36374 /* Home.swift */; };
+		E7A115F42AB6A90800D36374 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F32AB6A90800D36374 /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		CED851152AB44ADC00147E90 /* BanOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanOptionView.swift; sourceTree = "<group>"; };
 		CED851192AB44E3C00147E90 /* MerchantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRowView.swift; sourceTree = "<group>"; };
 		CED8511B2AB452D500147E90 /* AllUserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserRowView.swift; sourceTree = "<group>"; };
+		E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
+		E7A115EF2AB6A8D900D36374 /* stackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackCardView.swift; sourceTree = "<group>"; };
+		E7A115F12AB6A8F300D36374 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E7A115F32AB6A90800D36374 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 		CED850F82AB4496A00147E90 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7A115EC2AB6A8A600D36374 /* Swipe */,
 				CED850FD2AB4499300147E90 /* AdminViews */,
 			);
 			path = Views;
@@ -177,6 +186,17 @@
 				CED851152AB44ADC00147E90 /* BanOptionView.swift */,
 			);
 			path = AdminViews;
+			sourceTree = "<group>";
+		};
+		E7A115EC2AB6A8A600D36374 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */,
+				E7A115F12AB6A8F300D36374 /* Home.swift */,
+				E7A115EF2AB6A8D900D36374 /* stackCardView.swift */,
+				E7A115F32AB6A90800D36374 /* Shop.swift */,
+			);
+			path = Swipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +289,8 @@
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
 				CED851082AB44A3C00147E90 /* HomeView.swift in Sources */,
 				CED850FF2AB449C300147E90 /* UserModel.swift in Sources */,
+				E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */,
+				E7A115F22AB6A8F300D36374 /* Home.swift in Sources */,
 				CED851122AB44AB200147E90 /* SearchBarView.swift in Sources */,
 				CED8510E2AB44A8700147E90 /* ScndView.swift in Sources */,
 				CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */,
@@ -278,7 +300,9 @@
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
 				CED851102AB44A9B00147E90 /* ThirdView.swift in Sources */,
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,
+				E7A115F42AB6A90800D36374 /* Shop.swift in Sources */,
 				CED851162AB44ADC00147E90 /* BanOptionView.swift in Sources */,
+				E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */,
 				CED8510C2AB44A7400147E90 /* FirstView.swift in Sources */,
 				CED851062AB44A2B00147E90 /* SlidingTabView.swift in Sources */,
 			);
