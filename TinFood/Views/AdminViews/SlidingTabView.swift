@@ -15,3 +15,8 @@ struct SlidingTabView: View {
         HomeView(viewModel: viewModel)
     }
 }
+struct SlidingTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        SlidingTabView()
+    }
+}

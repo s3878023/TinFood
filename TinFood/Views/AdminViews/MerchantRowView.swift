@@ -9,29 +9,25 @@ import Foundation
 import SwiftUI
 
 struct MerchantsRowView: View {
-    let merchant: UserModel // Assuming you have UserModel for merchants
+    @State var merchant: UserModel
     @ObservedObject var viewModel: HomeViewModel
-    @State private var showBanOptions = false
     
     var body: some View {
-        if (merchant.isMerchant == true){
+        if merchant.isMerchant ?? true {
             HStack {
-                Text(merchant.name)
+                Text(merchant.name ?? "")
                     .font(.system(size: 20))
                 Spacer()
                 Button(action: {
-                    viewModel.banUser(user: merchant)
+                    // Add any action you want when the button is tapped
                 }) {
                     Image(systemName: "ellipsis")
                         .rotationEffect(.degrees(90.0))
                         .foregroundColor(Color("CustomedOrange"))
                 }
-                .popover(isPresented: $showBanOptions) {
-                    BanOptionsView(user: merchant)
-                }
                 .sheet(isPresented: $viewModel.showMoreOptions) {
                     // Add the view for more options here
-                    Text("More Options for \(merchant.name)")
+                    Text("More Options for \(merchant.name ?? "")")
                 }
             }
             .onTapGesture {
@@ -40,3 +36,5 @@ struct MerchantsRowView: View {
         }
     }
 }
+
+

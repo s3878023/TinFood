@@ -40,7 +40,7 @@ struct HomeView: View {
                     }))
             }
         }
-        .background(Color("CustomedYellow"))
+        .background(Color("background"))
         .animation(.default)
         .edgesIgnoringSafeArea(.all)
     }

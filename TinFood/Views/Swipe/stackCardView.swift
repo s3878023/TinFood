@@ -7,6 +7,7 @@
 //
 import SwiftUI
 
+
 struct stackCardView: View {
     @EnvironmentObject var homeData: homeViewModel
     var shop: Shop
@@ -22,12 +23,21 @@ struct stackCardView: View {
             let topOffset = (index <= 2 ? index: 2) * 15
 
             ZStack{
-                Image(shop.profilePic)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: size.width - topOffset, height: size.height)
-                    .cornerRadius(15)
-                    .offset(y: -topOffset)
+//                Image(shop.profilePic)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: size.width - topOffset, height: size.height)
+//                    .cornerRadius(15)
+//                    .offset(y: -topOffset)
+                AsyncImage(url: URL(string: shop.profilePic ?? "")) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: size.width - topOffset, height: size.height)
+                        .cornerRadius(15)
+                        .offset(y: -topOffset)
+                } placeholder: {
+                    ProgressView()
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
@@ -109,7 +119,7 @@ struct stackCardView: View {
 
     func rightSwipe(){
         homeData.likedShops.append(shop.name)
-
+        
         print("right swipe")
     }
 }

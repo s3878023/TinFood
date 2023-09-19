@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct UserModel: Identifiable {
-    let id = UUID()
-    let name: String
-    var isMerchant: Bool = false
-    var isBanned: Bool = false
+struct UserModel {
+    let id = UUID().uuidString
+    var name: String?
+    var documentID: String?
+    var isMerchant: Bool?
 }
 
