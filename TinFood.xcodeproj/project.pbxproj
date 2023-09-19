@@ -48,7 +48,6 @@
 		CED851102AB44A9B00147E90 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8510F2AB44A9B00147E90 /* ThirdView.swift */; };
 		CED851122AB44AB200147E90 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851112AB44AB200147E90 /* SearchBarView.swift */; };
 		CED851142AB44AC900147E90 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851132AB44AC900147E90 /* UserRowView.swift */; };
-		CED851162AB44ADC00147E90 /* BanOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851152AB44ADC00147E90 /* BanOptionView.swift */; };
 		CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851192AB44E3C00147E90 /* MerchantRowView.swift */; };
 		CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8511B2AB452D500147E90 /* AllUserRowView.swift */; };
 		E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */; };
@@ -89,7 +88,6 @@
 		CED8510F2AB44A9B00147E90 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		CED851112AB44AB200147E90 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		CED851132AB44AC900147E90 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
-		CED851152AB44ADC00147E90 /* BanOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanOptionView.swift; sourceTree = "<group>"; };
 		CED851192AB44E3C00147E90 /* MerchantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRowView.swift; sourceTree = "<group>"; };
 		CED8511B2AB452D500147E90 /* AllUserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserRowView.swift; sourceTree = "<group>"; };
 		E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 				CED851132AB44AC900147E90 /* UserRowView.swift */,
 				CED851192AB44E3C00147E90 /* MerchantRowView.swift */,
 				CED8511B2AB452D500147E90 /* AllUserRowView.swift */,
-				CED851152AB44ADC00147E90 /* BanOptionView.swift */,
 			);
 			path = AdminViews;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				CED851102AB44A9B00147E90 /* ThirdView.swift in Sources */,
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,
 				E7A115F42AB6A90800D36374 /* Shop.swift in Sources */,
-				CED851162AB44ADC00147E90 /* BanOptionView.swift in Sources */,
 				4A1F8AE62AB963BB001E67AB /* Authentication.swift in Sources */,
 				E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */,
 				CED8510C2AB44A7400147E90 /* FirstView.swift in Sources */,

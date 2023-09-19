@@ -7,35 +7,50 @@
 
 import Foundation
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 class HomeViewModel: ObservableObject {
-    @Published var users: [UserModel] = [
-        UserModel(name: "User 1"),
-        UserModel(name: "User 2"),
-        UserModel(name: "User 3"),
-        UserModel(name: "Merchant1", isMerchant: true),
-        UserModel(name: "Merchant2", isMerchant: true),
-        UserModel(name: "Merchant3", isMerchant: true),
-    ]
+    @Published var users = [UserModel]()
     @Published var searchText: String = ""
     @Published var index: Int = 1
     @Published var offset = 0
     @Published var showMoreOptions: Bool = false
+    var db = Firestore.firestore()
     var width = UIScreen.main.bounds.width
 
     var filteredUsers: [UserModel] {
         if searchText.isEmpty {
             return users
         } else {
-            return users.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            return users.filter { $0.name!.localizedCaseInsensitiveContains(searchText) }
         }
     }
-
-    func banUser(user: UserModel) {
-        if let index = users.firstIndex(where: { $0.id == user.id }) {
-            users[index].isBanned.toggle()
+    init() {
+            getAllUsersData()
+    }
+    
+    func getAllUsersData(){
+        db.collection("User").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            self.users = documents.map {(queryDocumentSnapshot) -> UserModel in
+                let data = queryDocumentSnapshot.data()
+                let name = data["name"] as? String ?? ""
+                let isMerchant = data["isMerchant"] as? BooleanLiteralType ?? false
+                return UserModel(name: name, documentID: queryDocumentSnapshot.documentID, isMerchant: isMerchant)
+            }
         }
     }
+    func addNewUserData(name: String) {
+        // add a new document of a movie name in the "movies" collection
+        db.collection("User").addDocument(data: ["name": name])
+    }
+                                      
+    
     func changeView(left: Bool) {
 
         if left {
@@ -60,6 +75,16 @@ class HomeViewModel: ObservableObject {
             self.offset = Int(-self.width)
         } else {
             self.offset = Int(-self.width - self.width)
+        }
+    }
+    
+    func removeUserData(documentID: String){
+        db.collection("User").document(documentID).delete{ (error) in
+            if let error = error{
+                print("Error removing document: \(error)")
+            }else{
+                print("Document successfully removed")
+            }
         }
     }
 }
