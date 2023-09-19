@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Merchant: Identifiable{
-    var id = UUID()
-    var username, password, storename : String
+struct Merchant: Codable,Identifiable{
+    var id: String = UUID().uuidString
+    var username, password, storename,image : String?
 }

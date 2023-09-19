@@ -17,6 +17,7 @@
 		4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */; };
 		4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */; };
 		4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF322AB9843E004B72A0 /* Merchant.swift */; };
+		4A5F1B462AB98FA8000A25B6 /* MerchantViewDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F1B452AB98FA8000A25B6 /* MerchantViewDisplayView.swift */; };
 		4AE207F02AB6B02300BA8D1A /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207ED2AB6B02300BA8D1A /* CouponView.swift */; };
 		4AE207F12AB6B02300BA8D1A /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */; };
 		4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */; };
@@ -68,6 +69,7 @@
 		4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDisplayDatabase.swift; sourceTree = "<group>"; };
 		4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewModel.swift; sourceTree = "<group>"; };
 		4A50AF322AB9843E004B72A0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		4A5F1B452AB98FA8000A25B6 /* MerchantViewDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewDisplayView.swift; sourceTree = "<group>"; };
 		4AE207ED2AB6B02300BA8D1A /* CouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
 		4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,13 @@
 			path = Merchant;
 			sourceTree = "<group>";
 		};
+		4A5F1B472AB997F2000A25B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4AE207EC2AB6B00A00BA8D1A /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +158,7 @@
 				4A1F8AE72AB96583001E67AB /* SignInView.swift */,
 				4A1F8AEB2AB971AA001E67AB /* AuthManager.swift */,
 				4A1F8AED2AB974C3001E67AB /* SignUpView.swift */,
+				4A5F1B452AB98FA8000A25B6 /* MerchantViewDisplayView.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -167,6 +177,7 @@
 			children = (
 				A16261712AB1E7FE00E6628A /* TinFood */,
 				A16261702AB1E7FE00E6628A /* Products */,
+				4A5F1B472AB997F2000A25B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,6 +389,7 @@
 				CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */,
 				4A1F8AE82AB96583001E67AB /* SignInView.swift in Sources */,
 				4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */,
+				4A5F1B462AB98FA8000A25B6 /* MerchantViewDisplayView.swift in Sources */,
 				CED8510A2AB44A5E00147E90 /* AppBarView.swift in Sources */,
 				CED851042AB44A0100147E90 /* HomeViewModel.swift in Sources */,
 				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
