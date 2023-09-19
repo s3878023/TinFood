@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct MerchantView: View {
     @ObservedObject var foodModel = FoodViewModel()
@@ -18,12 +20,16 @@ struct MerchantView: View {
                           Image("store")
                               .resizable()
                               .frame(width: 75,height: 75)
-                          Text("McDonald")
-                              .fontWeight(.bold)
+                          VStack(alignment: .leading){Text("McDonald")
+                                  .fontWeight(.bold)
+                              Text("Address")
+                                  .fontWeight(.bold)
+                          }
                           Spacer()
                           Image(systemName: "person.circle.fill")
                               .font(.system(size: 40))
                               .foregroundColor(Color("button"))
+                         
                       }
                       .frame(maxWidth: 350)
                       .padding(.bottom)
@@ -100,7 +106,6 @@ struct MerchantView: View {
                                       .font(.system(size:20))
                                   Text(food.category)
                                       .font(.system(size:12))
-                                 
                               }
                           }
                           .frame(height : 80)
@@ -115,9 +120,10 @@ struct MerchantView: View {
                   }
               }
               .foregroundStyle(Color("text"))
-              .edgesIgnoringSafeArea(.all)
-              
+              .ignoresSafeArea(.all)
+             
           }
+          .navigationBarBackButtonHidden(true)
          
 
       }

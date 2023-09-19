@@ -10,6 +10,13 @@
 		4A07BCBE2AB6F8C700B46D62 /* ResDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07BCBB2AB6F8C600B46D62 /* ResDetailView.swift */; };
 		4A07BCBF2AB6F8C700B46D62 /* FavorRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07BCBC2AB6F8C600B46D62 /* FavorRes.swift */; };
 		4A07BCC02AB6F8C700B46D62 /* Components in Resources */ = {isa = PBXBuildFile; fileRef = 4A07BCBD2AB6F8C700B46D62 /* Components */; };
+		4A1F8AE62AB963BB001E67AB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8AE52AB963BB001E67AB /* Authentication.swift */; };
+		4A1F8AE82AB96583001E67AB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8AE72AB96583001E67AB /* SignInView.swift */; };
+		4A1F8AEC2AB971AA001E67AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8AEB2AB971AA001E67AB /* AuthManager.swift */; };
+		4A1F8AEE2AB974C3001E67AB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8AED2AB974C3001E67AB /* SignUpView.swift */; };
+		4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */; };
+		4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */; };
+		4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF322AB9843E004B72A0 /* Merchant.swift */; };
 		4AE207F02AB6B02300BA8D1A /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207ED2AB6B02300BA8D1A /* CouponView.swift */; };
 		4AE207F12AB6B02300BA8D1A /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */; };
 		4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */; };
@@ -54,6 +61,13 @@
 		4A07BCBB2AB6F8C600B46D62 /* ResDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailView.swift; sourceTree = "<group>"; };
 		4A07BCBC2AB6F8C600B46D62 /* FavorRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorRes.swift; sourceTree = "<group>"; };
 		4A07BCBD2AB6F8C700B46D62 /* Components */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Components; sourceTree = "<group>"; };
+		4A1F8AE52AB963BB001E67AB /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		4A1F8AE72AB96583001E67AB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		4A1F8AEB2AB971AA001E67AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		4A1F8AED2AB974C3001E67AB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDisplayDatabase.swift; sourceTree = "<group>"; };
+		4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewModel.swift; sourceTree = "<group>"; };
+		4A50AF322AB9843E004B72A0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
 		4AE207ED2AB6B02300BA8D1A /* CouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
 		4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
@@ -116,12 +130,25 @@
 			path = UserUI;
 			sourceTree = "<group>";
 		};
+		4A50AF2D2AB983CE004B72A0 /* Merchant */ = {
+			isa = PBXGroup;
+			children = (
+				4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */,
+				4A50AF322AB9843E004B72A0 /* Merchant.swift */,
+			);
+			path = Merchant;
+			sourceTree = "<group>";
+		};
 		4AE207EC2AB6B00A00BA8D1A /* Merchant */ = {
 			isa = PBXGroup;
 			children = (
 				4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */,
 				4AE207ED2AB6B02300BA8D1A /* CouponView.swift */,
 				4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */,
+				4A1F8AE52AB963BB001E67AB /* Authentication.swift */,
+				4A1F8AE72AB96583001E67AB /* SignInView.swift */,
+				4A1F8AEB2AB971AA001E67AB /* AuthManager.swift */,
+				4A1F8AED2AB974C3001E67AB /* SignUpView.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -181,6 +208,7 @@
 				4AE207EC2AB6B00A00BA8D1A /* Merchant */,
 				E7A115EC2AB6A8A600D36374 /* Swipe */,
 				CED850FD2AB4499300147E90 /* AdminViews */,
+				4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +216,7 @@
 		CED850F92AB4497100147E90 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A50AF2D2AB983CE004B72A0 /* Merchant */,
 				4AE207F32AB6B02A00BA8D1A /* Food */,
 				CED850FC2AB4498C00147E90 /* AdminModel */,
 			);
@@ -337,6 +366,7 @@
 			files = (
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
 				CED851082AB44A3C00147E90 /* HomeView.swift in Sources */,
+				4A1F8AEC2AB971AA001E67AB /* AuthManager.swift in Sources */,
 				4AE207F02AB6B02300BA8D1A /* CouponView.swift in Sources */,
 				CED850FF2AB449C300147E90 /* UserModel.swift in Sources */,
 				E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */,
@@ -346,9 +376,13 @@
 				CED8510E2AB44A8700147E90 /* ScndView.swift in Sources */,
 				CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */,
 				CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */,
+				4A1F8AE82AB96583001E67AB /* SignInView.swift in Sources */,
 				4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */,
 				CED8510A2AB44A5E00147E90 /* AppBarView.swift in Sources */,
 				CED851042AB44A0100147E90 /* HomeViewModel.swift in Sources */,
+				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
+				4A1F8AEE2AB974C3001E67AB /* SignUpView.swift in Sources */,
+				4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */,
 				4AE207F12AB6B02300BA8D1A /* MerchantView.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
 				4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */,
@@ -356,8 +390,10 @@
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,
 				E7A115F42AB6A90800D36374 /* Shop.swift in Sources */,
 				CED851162AB44ADC00147E90 /* BanOptionView.swift in Sources */,
+				4A1F8AE62AB963BB001E67AB /* Authentication.swift in Sources */,
 				E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */,
 				CED8510C2AB44A7400147E90 /* FirstView.swift in Sources */,
+				4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */,
 				4A07BCBF2AB6F8C700B46D62 /* FavorRes.swift in Sources */,
 				CED851062AB44A2B00147E90 /* SlidingTabView.swift in Sources */,
 				4A07BCBE2AB6F8C700B46D62 /* ResDetailView.swift in Sources */,
