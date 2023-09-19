@@ -10,6 +10,8 @@ import SwiftUI
 
 struct AppBarView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @State private var showActionSheet = false
+    @State private var selection = "None"
     var width: CGFloat // Add this property
 
     init(viewModel: HomeViewModel, width: CGFloat) {
@@ -25,9 +27,19 @@ struct AppBarView: View {
                     .resizable()
                     .frame(width: 200, height: 55)
                 Spacer()
-                Image(systemName: "person.circle.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(Color("button"))
+                Button {
+                    showActionSheet = true
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(Color("button"))
+                }
+                .confirmationDialog("Do you want to log out ?", isPresented: $showActionSheet, titleVisibility: .visible){
+                    Button("Log out", role: .destructive){
+                        selection = "Log out"
+                    }
+                }
+  
             }
             .padding(.bottom)
             .padding(.horizontal)
