@@ -14,16 +14,25 @@ struct FavorRes: View {
     ]
     
     var body: some View {
-            NavigationView{
-                LazyVGrid(columns: columns, spacing: 30){
-                    ForEach(0..<6) { item in
-                        NavigationLink ( destination: ResDetailView(),
-                                         label: {
-                            ContentCell()
-                        })
+        NavCustomView {
+                ZStack{
+                    Color(hex: 0xfaf1e8).ignoresSafeArea()
+                    LazyVGrid(columns: columns, spacing: 30){
+                        ForEach(0..<6) { item in
+                            
+                            NavigationLink ( destination: MerchantView()
+                                .customNavTitle("TinFood")
+                                .customNavSubTitle("Manwah")
+                                            ,
+                                             label: {
+                                ContentCell()
+                            })
+                    }
                 }
             }
+                .CustomNavBarItems(title: "TinFood", subtitle: "Restaurant", backButtonHidden: true)
         }
+        
     }
 }
 
@@ -43,7 +52,7 @@ struct ContentCell: View {
                         .foregroundColor(Color(hex: 0x383838))
                         .padding(3)
                         .background(Color(hex: 0xf9a35d).opacity(0.7))
-//                        .cornerRadius(10, corners: [.topRight, .bottomRight])
+                        .cornerRadius(10, corners: [.topRight, .bottomRight])
                         .padding(.bottom, 10),
                     alignment: .bottomLeading
                     )

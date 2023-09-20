@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 
 struct Home: View {
-    @StateObject var homeData: homeViewModel = homeViewModel()
+    @ObservedObject var homeData: homeViewModel = homeViewModel()
     var body: some View {
         ZStack {
             Rectangle()

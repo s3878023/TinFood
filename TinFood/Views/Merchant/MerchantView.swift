@@ -123,7 +123,7 @@ struct MerchantView: View {
               .ignoresSafeArea(.all)
              
           }
-          .navigationBarBackButtonHidden(true)
+          .navigationBarBackButtonHidden(false)
          
 
       }
