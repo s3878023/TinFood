@@ -20,45 +20,32 @@ struct MerchantViewDisplayView: View {
             NavigationView {
                 List {
                     ForEach(merchantViewModel.merchants, id: \.id) { merchant in
-                        HStack{
-
+                        Text(merchant.storename ?? "")
+                        Text(merchant.username ?? "")
+                        Text(merchant.password ?? "")
+                        Text(merchant.description ?? "")
+                        AsyncImage(url: URL(string: merchant.image ?? "")) { phase in
+                            switch phase {
+                            case .empty:
+                                // Placeholder or loading view if needed
+                                Text("Loading...")
+                            case .success(let image):
+                                image
+                                    .resizable() // Make the image resizable
+                                    .scaledToFit() // Maintain aspect ratio
+                            case .failure:
+                                // Handle error if image fails to load
+                                Text("Image loading failed")
+                            @unknown default:
+                                // Handle unknown cases or provide a fallback view
+                                Text("Unknown state")
+                            }
                         }
-                            ForEach(merchant.username ?? [], id: \.self) { username in
-                                Text(username)
-                            }
-
-
-                            ForEach(merchant.password ?? [], id: \.self) { password in
-                                Text(password)
-                            }
-
-                            ForEach(merchant.storename ?? [], id: \.self) { storename in
-                                Text(storename)
-                            }
-                            ForEach(merchant.image ?? [], id: \.self) { imageURL in
-                                AsyncImage(url: URL(string: imageURL)) { phase in
-                                    switch phase {
-                                    case .empty:
-                                        // Placeholder or loading view if needed
-                                        Text("Loading...")
-                                    case .success(let image):
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    case .failure:
-                                        // Handle error if image fails to load
-                                        Text("Image loading failed")
-                                    @unknown default:
-                                        // Handle unknown cases or provide a fallback view
-                                        Text("Unknown state")
-                                    }
-                                }
-                                .frame(width: 100, height: 100)
-                            }
-
+                        .frame(width: 100, height: 100)
                     }
                 }
-                .navigationTitle("All Merchants")
+                .navigationTitle("All Movies")
+
             }
 
         }
