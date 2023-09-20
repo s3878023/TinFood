@@ -29,5 +29,6 @@ let foodData = [
     Food(name: "Fried Chicken", image: "chicken", description: "this is chicken", category: "chicken", price: 50000),
     Food(name: "Fried Chicken", image: "chicken", description: "this is chicken", category: "chicken", price: 50000),
     Food(name: "Fried Chicken", image: "chicken", description: "this is chicken", category: "chicken", price: 50000),
+    Food(name: "Fried Chicken", image: "chicken", description: "this is chicken", category: "chicken", price: 50000),
     Food(name: "Fried Chicken", image: "chicken", description: "this is chicken", category: "chicken", price: 50000)
 ]

@@ -36,27 +36,6 @@ struct MerchantView: View {
                       HStack{
                           NavigationLink {
                               // destination view to navigation to
-                             CouponView()
-                          } label: {
-                              Text("Order")
-                                  .padding(.leading)
-                                  .fontWeight(.bold)
-                              Spacer()
-                              Image(systemName: "arrow.right.circle")
-                                  .foregroundColor(Color("button"))
-                                  .frame(width: 50,height: 50)
-                          }
-                      }
-                      .frame(height: 50)
-                      .overlay(
-                              RoundedRectangle(cornerRadius: 16)
-                                  .stroke(Color("components"), lineWidth: 3)
-                          )
-                      .frame(maxWidth: 350)
-                      .padding(.bottom,10)
-                      HStack{
-                          NavigationLink {
-                              // destination view to navigation to
                               CouponView()
                           } label: {
                               Text("Coupon")

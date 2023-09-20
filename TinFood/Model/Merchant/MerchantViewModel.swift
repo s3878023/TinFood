@@ -28,10 +28,10 @@ class MerchantViewModel : ObservableObject{
             // Loop to get the "name" field inside each movie document
             self.merchants = documents.map { (queryDocumentSnapshot) -> Merchant in
                 let data = queryDocumentSnapshot.data()
-                let username = data["username"] as? String ?? ""
-                let password = data["password"] as? String ?? ""
-                let storename = data["storename"] as? String ?? ""
-                let image = data["image"] as? String ?? ""
+                let username = data["username"] as? [String] ?? []
+                let password = data["password"] as? [String] ?? []
+                let storename = data["storename"] as? [String] ?? []
+                let image = data["image"] as? [String] ?? []
 
                 return Merchant(username: username,password: password,storename: storename, image:image)
             }
