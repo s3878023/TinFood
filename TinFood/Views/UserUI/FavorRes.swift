@@ -20,7 +20,7 @@ struct FavorRes: View {
                     LazyVGrid(columns: columns, spacing: 30){
                         ForEach(0..<6) { item in
                             
-                            NavigationLink ( destination: MerchantView()
+                            NavCustomLink ( destination: ResDetailView()
                                 .customNavTitle("TinFood")
                                 .customNavSubTitle("Manwah")
                                             ,
@@ -42,7 +42,7 @@ struct ContentCell: View {
             Image("manwah")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 110)
+                .frame(maxHeight: 130)
                 .padding(.vertical, 4)
                 .border(.brown, width: 4)
                 .overlay(
@@ -73,3 +73,4 @@ struct FavorRes_Previews: PreviewProvider {
         FavorRes()
     }
 }
+

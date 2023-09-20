@@ -10,6 +10,7 @@ import SwiftUI
 struct NavCustomView<Content: View>: View {
     let content: Content
     
+    
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
@@ -21,6 +22,7 @@ struct NavCustomView<Content: View>: View {
             }
             .navigationBarHidden(true)
         }
+        .background(Color(hex: 0xfaf1e8))
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -32,3 +34,11 @@ struct NavCustomView_Previews: PreviewProvider {
         }
     }
 }
+
+extension UINavigationController {
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
+    }
+}
+

@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct NavBarCustomView: View {
-    
-    @State private var displayArrowBackButton: Bool = true
-    @State private var title: String = "Title"
-    @State private var subtitle: String? = "Subtitle" //nil
-    
     var mainNavSections: [MainNavSection] = [
         .init(name: "Thích", isSelected: false),
         .init(name: "Siêu thích", isSelected: false),
         .init(name: "Khuyến mãi", isSelected: false)
     ]
+    
+    struct MainNavSection: Hashable {
+        var name: String
+        var isSelected: Bool
+    }
+    @Environment(\.presentationMode) var presentationMode
+    let displayArrowBackButton: Bool
+    let title: String
+    let subtitle: String?
+    
     
     
     var body: some View {
@@ -50,21 +55,17 @@ struct NavBarCustomView: View {
 struct NavBarCustomView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            NavBarCustomView()
+            NavBarCustomView(displayArrowBackButton: true, title: "Title", subtitle: "Subtitle")
             Spacer()
         }
     }
 }
 
-struct MainNavSection: Hashable {
-    let name: String
-    let isSelected: Bool
-}
 
 extension NavBarCustomView {
     private var backArrowButton: some View {
         Button(action: {
-            
+            presentationMode.wrappedValue.dismiss()
         }, label: {
             Image(systemName: "chevron.left")
         })
@@ -75,9 +76,18 @@ extension NavBarCustomView {
             Text(title)
                 .font(.title)
                 .fontWeight(.semibold)
+                .padding(.bottom, 5)
             if let subtitle = subtitle {
                 Text(subtitle)
+                    .padding(.bottom, 10)
+            }
+            HStack{
+                    ForEach(mainNavSections, id: \.name) { section in
+                        NavCustomLink(destination: ResDetailView(), label: {Text(section.name)})
+                        .padding(.trailing)
+                    }
             }
         }
     }
 }
+
