@@ -54,6 +54,7 @@
 		E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115EF2AB6A8D900D36374 /* stackCardView.swift */; };
 		E7A115F22AB6A8F300D36374 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F12AB6A8F300D36374 /* Home.swift */; };
 		E7A115F42AB6A90800D36374 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F32AB6A90800D36374 /* Shop.swift */; };
+		F4629CA92ABBF8C300671E1E /* MerchantForUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4629CA82ABBF8C300671E1E /* MerchantForUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		E7A115EF2AB6A8D900D36374 /* stackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackCardView.swift; sourceTree = "<group>"; };
 		E7A115F12AB6A8F300D36374 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E7A115F32AB6A90800D36374 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		F4629CA82ABBF8C300671E1E /* MerchantForUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantForUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */,
 				4AE207ED2AB6B02300BA8D1A /* CouponView.swift */,
 				4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */,
+				F4629CA82ABBF8C300671E1E /* MerchantForUserView.swift */,
 				4A1F8AE52AB963BB001E67AB /* Authentication.swift */,
 				4A1F8AE72AB96583001E67AB /* SignInView.swift */,
 				4A1F8AED2AB974C3001E67AB /* SignUpView.swift */,
@@ -383,6 +386,7 @@
 				4A1F8AE82AB96583001E67AB /* SignInView.swift in Sources */,
 				4AE207F22AB6B02300BA8D1A /* AddFoodView.swift in Sources */,
 				4A5F1B462AB98FA8000A25B6 /* MerchantViewDisplayView.swift in Sources */,
+				F4629CA92ABBF8C300671E1E /* MerchantForUserView.swift in Sources */,
 				CED8510A2AB44A5E00147E90 /* AppBarView.swift in Sources */,
 				CED851042AB44A0100147E90 /* HomeViewModel.swift in Sources */,
 				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
