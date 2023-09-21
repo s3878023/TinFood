@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 struct Home: View {
     @ObservedObject var homeData: homeViewModel = homeViewModel()
-//    @ObservedObject var loginViewModel: LoginViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
 
     var body: some View {
         ZStack {
@@ -145,6 +145,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home(loginViewModel: LoginViewModel())
     }
 }

@@ -153,11 +153,11 @@ struct stackCardView: View {
 
 }
 
-struct stackCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
+//struct stackCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Home()
+//    }
+//}
 
 extension View {
     func getRect()->CGRect{
