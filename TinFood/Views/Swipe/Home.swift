@@ -12,6 +12,8 @@ import FirebaseFirestore
 
 struct Home: View {
     @ObservedObject var homeData: homeViewModel = homeViewModel()
+//    @ObservedObject var loginViewModel: LoginViewModel
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -62,7 +64,7 @@ struct Home: View {
                         }
                         else {
                             ForEach(shops.reversed()){shop in
-                                stackCardView(shop: shop)
+                                stackCardView(loginViewModel: LoginViewModel(), shop: shop)
                                     .environmentObject(homeData)
                             }
                         }
