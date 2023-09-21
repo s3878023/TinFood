@@ -47,14 +47,7 @@
 		CED851142AB44AC900147E90 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851132AB44AC900147E90 /* UserRowView.swift */; };
 		CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED851192AB44E3C00147E90 /* MerchantRowView.swift */; };
 		CED8511C2AB452D500147E90 /* AllUserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8511B2AB452D500147E90 /* AllUserRowView.swift */; };
-		E4705BFC2ABC0AD800386A69 /* NavBarContainerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705BFA2ABC0AD800386A69 /* NavBarContainerCustom.swift */; };
-		E4705BFD2ABC0AD800386A69 /* FavorRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705BFB2ABC0AD800386A69 /* FavorRes.swift */; };
-		E4705C042ABC0AEE00386A69 /* NavCustomLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705BFE2ABC0AEE00386A69 /* NavCustomLink.swift */; };
-		E4705C052ABC0AEE00386A69 /* NavBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705BFF2ABC0AEE00386A69 /* NavBarCustomView.swift */; };
-		E4705C062ABC0AEE00386A69 /* NavBarTitleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705C002ABC0AEE00386A69 /* NavBarTitleCustom.swift */; };
-		E4705C072ABC0AEE00386A69 /* NavCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705C012ABC0AEE00386A69 /* NavCustomView.swift */; };
-		E4705C082ABC0AEE00386A69 /* ResDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705C022ABC0AEE00386A69 /* ResDetailView.swift */; };
-		E4705C092ABC0AEE00386A69 /* SpecificCornersRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705C032ABC0AEE00386A69 /* SpecificCornersRadius.swift */; };
+		E4705C1D2ABC11E900386A69 /* LikeRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4705C1C2ABC11E900386A69 /* LikeRes.swift */; };
 		E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */; };
 		E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115EF2AB6A8D900D36374 /* stackCardView.swift */; };
 		E7A115F22AB6A8F300D36374 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F12AB6A8F300D36374 /* Home.swift */; };
@@ -92,14 +85,7 @@
 		CED851132AB44AC900147E90 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		CED851192AB44E3C00147E90 /* MerchantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRowView.swift; sourceTree = "<group>"; };
 		CED8511B2AB452D500147E90 /* AllUserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserRowView.swift; sourceTree = "<group>"; };
-		E4705BFA2ABC0AD800386A69 /* NavBarContainerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarContainerCustom.swift; sourceTree = "<group>"; };
-		E4705BFB2ABC0AD800386A69 /* FavorRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorRes.swift; sourceTree = "<group>"; };
-		E4705BFE2ABC0AEE00386A69 /* NavCustomLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCustomLink.swift; sourceTree = "<group>"; };
-		E4705BFF2ABC0AEE00386A69 /* NavBarCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarCustomView.swift; sourceTree = "<group>"; };
-		E4705C002ABC0AEE00386A69 /* NavBarTitleCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitleCustom.swift; sourceTree = "<group>"; };
-		E4705C012ABC0AEE00386A69 /* NavCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCustomView.swift; sourceTree = "<group>"; };
-		E4705C022ABC0AEE00386A69 /* ResDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailView.swift; sourceTree = "<group>"; };
-		E4705C032ABC0AEE00386A69 /* SpecificCornersRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificCornersRadius.swift; sourceTree = "<group>"; };
+		E4705C1C2ABC11E900386A69 /* LikeRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRes.swift; sourceTree = "<group>"; };
 		E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewModel.swift; sourceTree = "<group>"; };
 		E7A115EF2AB6A8D900D36374 /* stackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackCardView.swift; sourceTree = "<group>"; };
 		E7A115F12AB6A8F300D36374 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -131,14 +117,7 @@
 		4A07BCBA2AB6F8B500B46D62 /* UserUI */ = {
 			isa = PBXGroup;
 			children = (
-				E4705BFF2ABC0AEE00386A69 /* NavBarCustomView.swift */,
-				E4705C002ABC0AEE00386A69 /* NavBarTitleCustom.swift */,
-				E4705BFE2ABC0AEE00386A69 /* NavCustomLink.swift */,
-				E4705C012ABC0AEE00386A69 /* NavCustomView.swift */,
-				E4705C022ABC0AEE00386A69 /* ResDetailView.swift */,
-				E4705C032ABC0AEE00386A69 /* SpecificCornersRadius.swift */,
-				E4705BFB2ABC0AD800386A69 /* FavorRes.swift */,
-				E4705BFA2ABC0AD800386A69 /* NavBarContainerCustom.swift */,
+				E4705C1C2ABC11E900386A69 /* LikeRes.swift */,
 			);
 			path = UserUI;
 			sourceTree = "<group>";
@@ -419,6 +398,7 @@
 				E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */,
 				CED8510C2AB44A7400147E90 /* FirstView.swift in Sources */,
 				4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */,
+				E4705C1D2ABC11E900386A69 /* LikeRes.swift in Sources */,
 				A1A3571E2ABAEF2400EA516A /* LoginView.swift in Sources */,
 				CED851062AB44A2B00147E90 /* SlidingTabView.swift in Sources */,
 			);
