@@ -12,5 +12,5 @@ import SwiftUI
 struct ShopTest : Codable,Identifiable{
     var id: String = UUID().uuidString
     var username, password, storename, image,address: String?
-    
+    var foodTests: [FoodTest]?
 }
