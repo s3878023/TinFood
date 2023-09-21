@@ -53,4 +53,3 @@ struct NavBarContainerCustom_Previews: PreviewProvider {
         }
     }
 }
-

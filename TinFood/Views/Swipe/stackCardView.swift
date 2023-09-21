@@ -6,10 +6,13 @@
 ////
 //
 import SwiftUI
-
+import Firebase
+import FirebaseFirestore
 
 struct stackCardView: View {
     @EnvironmentObject var homeData: homeViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
+
     var shop: Shop
     @State var offset: CGFloat = 0
     @GestureState var isDragging: Bool = false
@@ -117,11 +120,37 @@ struct stackCardView: View {
         print("left swipe")
     }
 
-    func rightSwipe(){
-        homeData.likedShops.append(shop.name)
+//    func rightSwipe(){
+//        homeData.likedShops.append(shop.name)
+//
+//        print("right swipe")
+//    }
+    func rightSwipe() {
+        let documentID = loginViewModel.userUUID
+
+        homeData.likedShops.append(shop.name) // Add to your local array (if needed)
+
+        let collectionName = "User" // Replace with your Firestore collection name
         
+        // Get a reference to your Firestore database
+        let db = Firestore.firestore()
+        
+        // Update the Firestore document with the new data
+        db.collection(collectionName).document(documentID).updateData([
+            "likedShops": FieldValue.arrayUnion([shop.name])
+            // Add other fields or updates as needed
+        ]) { error in
+            if let error = error {
+                print("Error updating Firestore: \(error.localizedDescription)")
+            } else {
+                print("Shop name added to Firestore array successfully")
+            }
+        }
+
         print("right swipe")
     }
+
+
 }
 
 struct stackCardView_Previews: PreviewProvider {

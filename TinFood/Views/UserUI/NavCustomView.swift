@@ -41,4 +41,3 @@ extension UINavigationController {
         interactivePopGestureRecognizer?.delegate = nil
     }
 }
-

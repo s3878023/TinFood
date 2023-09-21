@@ -1,28 +1,28 @@
 //
-//  FavorRes.swift
-//  Tinfood
+//  LikeRes.swift
+//  TinFood
 //
-//  Created by Khoa Dang Hoang Anh on 13/09/2023.
+//  Created by Bảo Khương Đặng Hoàng on 21/09/2023.
 //
 
 import SwiftUI
 
-struct FavorRes: View {
+struct LikeRes: View {
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
     
     var body: some View {
-        NavCustomView {
+//        NavCustomView {
                 ZStack{
-                    Color(hex: 0xfaf1e8).ignoresSafeArea()
+                    Color("background").ignoresSafeArea()
                     LazyVGrid(columns: columns, spacing: 30){
                         ForEach(0..<6) { item in
                             
-                            NavCustomLink ( destination: ResDetailView()
-                                .customNavTitle("TinFood")
-                                .customNavSubTitle("Manwah")
+                            NavigationLink ( destination: Text("")
+//                                .customNavTitle("TinFood")
+//                                .customNavSubTitle("Manwah")
                                             ,
                                              label: {
                                 ContentCell()
@@ -30,8 +30,8 @@ struct FavorRes: View {
                     }
                 }
             }
-                .CustomNavBarItems(title: "TinFood", subtitle: "Restaurant", backButtonHidden: true)
-        }
+//                .CustomNavBarItems(title: "TinFood", subtitle: "Restaurant", backButtonHidden: true)
+//        }
         
     }
 }
@@ -49,28 +49,18 @@ struct ContentCell: View {
                     Text("Manwah")
                         .fontWeight(.semibold)
                         .font(.body)
-                        .foregroundColor(Color(hex: 0x383838))
+                        .foregroundColor(Color("background"))
                         .padding(3)
-                        .background(Color(hex: 0xf9a35d).opacity(0.7))
-                        .cornerRadius(10, corners: [.topRight, .bottomRight])
+                        .background(Color("background").opacity(0.7))
+//                        .cornerRadius(10, corners: [.topRight, .bottomRight])
                         .padding(.bottom, 10),
                     alignment: .bottomLeading
                     )
     }
 }
 
-extension Color {
-    init(hex: Int, opacity: Double = 1.0) {
-        let red = Double((hex & 0xff0000) >> 16) / 255.0
-        let green = Double((hex & 0xff00) >> 8) / 255.0
-        let blue = Double((hex & 0xff) >> 0) / 255.0
-        self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
-    }
-}
-
-struct FavorRes_Previews: PreviewProvider {
+struct LikeRes_Previews: PreviewProvider {
     static var previews: some View {
-        FavorRes()
+        LikeRes()
     }
 }
-
