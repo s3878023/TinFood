@@ -22,13 +22,13 @@ struct ScndView: View {
                         List{
                             ForEach(viewModel.filteredUsers, id: \.id) { user in
                                MerchantsRowView(merchant: user, viewModel: viewModel)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("text"))
                                     .padding(.vertical, 18)
                                     .cornerRadius(10)
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(
                                         RoundedRectangle(cornerRadius: 10) // Add corner radius to each list item
-                                            .fill(.white)
+                                            .fill(Color("row"))
                                             .frame(height: 60) // Adjust the height of the rounded rectangle as needed
                                     )
                             }

@@ -17,7 +17,7 @@ struct UserRowView: View {
                 }) {
                     Image(systemName: "ellipsis")
                         .rotationEffect(.degrees(90.0))
-                        .foregroundColor(Color("CustomedOrange"))
+                        .foregroundColor(Color("button"))
                 }
                 .sheet(isPresented: $viewModel.showMoreOptions) {
                     // Add the view for more options here

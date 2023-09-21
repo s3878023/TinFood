@@ -22,13 +22,13 @@ struct FirstView: View {
                         List {
                             ForEach(viewModel.users, id: \.id) { user in
                                 UserRowView(user: user, viewModel: viewModel)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("text"))
                                     .padding(.vertical, 18)
                                     .cornerRadius(10)
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(
                                         RoundedRectangle(cornerRadius: 10) // Add corner radius to each list item
-                                            .fill(.white)
+                                            .fill(Color("row"))
                                             .frame(height: 60) // Adjust the height of the rounded rectangle as needed
                                     )
                             }

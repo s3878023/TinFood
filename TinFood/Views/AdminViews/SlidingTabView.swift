@@ -12,7 +12,7 @@ struct SlidingTabView: View {
     @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
-        HomeView(viewModel: viewModel)
+        HomeView(viewModel: viewModel, loginViewModel: LoginViewModel())
     }
 }
 struct SlidingTabView_Previews: PreviewProvider {

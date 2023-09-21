@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
 
     var body: some View {
         VStack(spacing: 0) {

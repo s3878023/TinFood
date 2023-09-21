@@ -39,7 +39,6 @@ struct AppBarView: View {
                         selection = "Log out"
                     }
                 }
-  
             }
             .padding(.bottom)
             .padding(.horizontal)
@@ -52,7 +51,7 @@ struct AppBarView: View {
                         Text("Users")
                             .fontWeight(.bold)
                             .font(.system(size: 20))
-                            .foregroundColor(viewModel.index == 1 ? .black : Color.black.opacity(0.45))
+                            .foregroundColor(viewModel.index == 1 ? Color("text") : Color("text").opacity(0.45))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)
                                     .fill(viewModel.index == 1 ? Color("myYellow") : Color.clear)
@@ -71,7 +70,7 @@ struct AppBarView: View {
                         Text("Merchants")
                             .fontWeight(.bold)
                             .font(.system(size: 20))
-                            .foregroundColor(viewModel.index == 2 ? .black : Color.black.opacity(0.45))
+                            .foregroundColor(viewModel.index == 2 ? Color("text") : Color("text").opacity(0.45))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)
                                     .fill(viewModel.index == 2 ? Color("myYellow") : Color.clear)
@@ -91,7 +90,7 @@ struct AppBarView: View {
                         Text("All Users")
                             .fontWeight(.bold)
                             .font(.system(size: 20))
-                            .foregroundColor(viewModel.index == 3 ? .black : Color.black.opacity(0.45))
+                            .foregroundColor(viewModel.index == 3 ? Color("text") : Color("text").opacity(0.45))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)
                                     .fill(viewModel.index == 3 ? Color("myYellow") : Color.clear)
@@ -106,7 +105,7 @@ struct AppBarView: View {
         .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 15)
         .padding(.horizontal)
         .padding(.bottom, 0)
-        .background(Color("CustomedPink"))
+        .background(Color("components"))
         .clipShape(RoundedRectangle(cornerRadius: 30))
     }
 }
