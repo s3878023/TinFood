@@ -20,7 +20,7 @@ struct AddFoodView: View {
         NavigationView {
             Form {
                 Section(header: Text("Food Details")) {
-                    TextField("Food Name", text: Binding<String>(
+                    TextField("Food Name ", text: Binding<String>(
                         get: { newFood.foodname ?? "" },
                         set: { newValue in newFood.foodname = newValue }
                     ))
