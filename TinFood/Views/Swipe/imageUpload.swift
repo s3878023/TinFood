@@ -36,6 +36,18 @@ struct ImageUploadView: View {
                 }
                 .disabled(uiImage == nil)
             }
+            if let imageURL = imageURL {
+                            // Display the uploaded image from the URL using AsyncImage
+                            AsyncImage(url: imageURL) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200, height: 200)
+                            }placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 200, height: 200)
+                        }
         }
         .padding()
     }
