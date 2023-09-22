@@ -16,41 +16,55 @@ struct ScndView: View {
         VStack {
             SearchBarView(searchText: $viewModel.searchText)
 
-            ScrollView {
-                VStack {
-                    NavigationView {
-                        List{
-                            ForEach(viewModel.filteredUsers, id: \.id) { user in
-                               MerchantsRowView(merchant: user, viewModel: viewModel)
-                                    .foregroundColor(Color("text"))
-                                    .padding(.vertical, 18)
-                                    .cornerRadius(10)
-                                    .listRowSeparator(.hidden)
-                                    .listRowBackground(
-                                        RoundedRectangle(cornerRadius: 10) // Add corner radius to each list item
-                                            .fill(Color("row"))
-                                            .frame(height: 60) // Adjust the height of the rounded rectangle as needed
-                                    )
-                            }
-                            .onDelete(perform: removeData)
-                        }
-                        .background(backgroundColor)
-                        .listStyle(PlainListStyle())
-                    }
-                }
-                .background(backgroundColor)
-                .padding(.bottom)
-            }
-            .padding(.horizontal)
-        }
-        .background(backgroundColor)
+            GeometryReader { geometry in
+               ScrollView {
+                   VStack {
+                       NavigationView {
+                           List{
+                               ForEach(viewModel.filteredShops, id: \.id) { shop in
+                                   MerchantsRowView(merchant: shop, viewModel: viewModel)
+                                       .foregroundColor(Color("text"))
+                                       .padding(.vertical, 18)
+                                       .cornerRadius(10)
+                                       .listRowSeparator(.hidden)
+                                       .listRowBackground(
+                                           RoundedRectangle(cornerRadius: 10)
+                                               .fill(Color("row"))
+                                               .frame(height: 60)
+                                       )
+                               }
+                               .onDelete(perform: removeData)
+                           }
+                           .background(backgroundColor)
+                           .listStyle(PlainListStyle())
+                       }
+                       .frame(height: geometry.size.height) // Set the frame height to match available height
+                   }
+                   .background(backgroundColor)
+                   .padding(.bottom)
+               }
+           }
+           .padding(.horizontal)
+       }
+       .background(backgroundColor)
+       .sheet(isPresented: $viewModel.showMoreOptionsMerc) {
+           if let selectedShop = viewModel.selectedShop {
+               ShowMoreOptionViewMerc(viewModel: viewModel)
+           }
+       }
     }
     
     func removeData(at offsets: IndexSet){
         for index in offsets{
-            if let documentID = viewModel.users[index].documentID{
-                viewModel.removeUserData(documentID: documentID)
+            if let documentID = viewModel.shops[index].documentID{
+                viewModel.removeShopData(documentID: documentID)
             }
         }
+    }
+}
+struct ScndView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = HomeViewModel()
+        return ScndView(viewModel: viewModel)
     }
 }

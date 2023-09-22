@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             AppBarView(viewModel: viewModel, width: UIScreen.main.bounds.width)
-                .background(Color("CustomedYellow"))
+                .background(Color("background"))
                 .padding(.bottom)
 
             GeometryReader { g in
@@ -25,9 +25,7 @@ struct HomeView: View {
 
                     ScndView(viewModel: viewModel)
                         .frame(width: g.frame(in: .global).width)
-
-                    ThirdView(viewModel: viewModel)
-                        .frame(width: g.frame(in: .global).width)
+                    
                 }
                 .offset(x: CGFloat(viewModel.offset))
                 .highPriorityGesture(DragGesture()
@@ -40,6 +38,7 @@ struct HomeView: View {
                         }
                     }))
             }
+            Spacer()
         }
         .background(Color("background"))
         .animation(.default)

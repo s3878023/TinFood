@@ -9,29 +9,20 @@ import Foundation
 import SwiftUI
 
 struct MerchantsRowView: View {
-    @State var merchant: UserModel
+    @State var merchant: Shop
     @ObservedObject var viewModel: HomeViewModel
-    
     var body: some View {
-        if merchant.isMerchant ?? true {
-            HStack {
-                Text(merchant.name ?? "")
-                    .font(.system(size: 20))
-                Spacer()
-                Button(action: {
-                    // Add any action you want when the button is tapped
-                }) {
-                    Image(systemName: "ellipsis")
-                        .rotationEffect(.degrees(90.0))
-                        .foregroundColor(Color("CustomedOrange"))
-                }
-                .sheet(isPresented: $viewModel.showMoreOptions) {
-                    // Add the view for more options here
-                    Text("More Options for \(merchant.name ?? "")")
-                }
-            }
-            .onTapGesture {
-                viewModel.showMoreOptions.toggle()
+        HStack {
+            Text(merchant.name)
+                .font(.system(size: 20))
+            Spacer()
+            Button(action: {
+                viewModel.selectedShop = merchant // Set the selectedUser property
+                viewModel.showMoreOptionsMerc.toggle()
+            }) {
+                Image(systemName: "ellipsis")
+                    .rotationEffect(.degrees(90.0))
+                    .foregroundColor(Color("button"))
             }
         }
     }

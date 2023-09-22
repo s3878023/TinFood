@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct FirstView: View {
     @ObservedObject var viewModel: HomeViewModel
     let backgroundColor = Color("background")
@@ -16,34 +17,41 @@ struct FirstView: View {
         VStack {
             SearchBarView(searchText: $viewModel.searchText)
             
-            ScrollView {
-                VStack {
-                    NavigationView {
-                        List {
-                            ForEach(viewModel.users, id: \.id) { user in
-                                UserRowView(user: user, viewModel: viewModel)
-                                    .foregroundColor(Color("text"))
-                                    .padding(.vertical, 18)
-                                    .cornerRadius(10)
-                                    .listRowSeparator(.hidden)
-                                    .listRowBackground(
-                                        RoundedRectangle(cornerRadius: 10) // Add corner radius to each list item
-                                            .fill(Color("row"))
-                                            .frame(height: 60) // Adjust the height of the rounded rectangle as needed
-                                    )
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack {
+                        NavigationView {
+                            List {
+                                ForEach(viewModel.filteredUsers, id: \.id) { user in
+                                    UserRowView(user: user, viewModel: viewModel)
+                                        .foregroundColor(Color("text"))
+                                        .padding(.vertical, 18)
+                                        .cornerRadius(10)
+                                        .listRowSeparator(.hidden)
+                                        .listRowBackground(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color("row"))
+                                                .frame(height: 60)
+                                        )
+                                }
+                                .onDelete(perform: removeData)
                             }
-                            .onDelete(perform: removeData)
+                            .background(backgroundColor)
+                            .listStyle(PlainListStyle())
                         }
-                        .background(backgroundColor)
-                        .listStyle(PlainListStyle())
+                        .frame(height: geometry.size.height) // Set the frame height to match available height
                     }
+                    .background(backgroundColor)
                 }
-                .background(backgroundColor)
-                .padding(.bottom)
             }
             .padding(.horizontal)
         }
         .background(backgroundColor)
+        .sheet(isPresented: $viewModel.showMoreOptions) {
+            if let selectedUser = viewModel.selectedUser {
+                ShowMoreOptionView(viewModel: viewModel)
+            }
+        }
     }
 
     func removeData(at offsets: IndexSet){
@@ -54,4 +62,9 @@ struct FirstView: View {
         }
     }
 }
-
+struct FirstView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = HomeViewModel()
+        return FirstView(viewModel: viewModel)
+    }
+}
