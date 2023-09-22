@@ -256,22 +256,40 @@ struct stackCardView: View {
     }
     
     func checkIfShopIsBlocked() {
-        let documentID = loginViewModel.userUUID
-        let collectionName = "User"
-        let db = Firestore.firestore()
-        
-        db.collection(collectionName).document(documentID).getDocument { snapshot, error in
-            if let error = error {
-                print("Error fetching Firestore document: \(error.localizedDescription)")
-            } else if let data = snapshot?.data(),
-                      let blockedShops = data["blockedShops"] as? [String],
-                      blockedShops.contains(shop.name) {
-                isShopBlocked = true // Shop is blocked
-            } else {
-                isShopBlocked = false // Shop is not blocked
+            let documentID = loginViewModel.userUUID
+            let collectionName = "User"
+            let db = Firestore.firestore()
+            
+            db.collection(collectionName).document(documentID).getDocument { snapshot, error in
+                if let error = error {
+                    print("Error fetching Firestore document: \(error.localizedDescription)")
+                } else if let data = snapshot?.data(),
+                          let blockedShops = data["blockedShops"] as? [String],
+                          let likedShops = data["likedShops"] as? [String],
+                          (blockedShops.contains(shop.name) || likedShops.contains(shop.name)) {
+                    isShopBlocked = true // Shop is blocked or liked
+                } else {
+                    isShopBlocked = false // Shop is neither blocked nor liked
+                }
             }
         }
-    }
+//    func checkIfShopIsBlocked() {
+//        let documentID = loginViewModel.userUUID
+//        let collectionName = "User"
+//        let db = Firestore.firestore()
+//
+//        db.collection(collectionName).document(documentID).getDocument { snapshot, error in
+//            if let error = error {
+//                print("Error fetching Firestore document: \(error.localizedDescription)")
+//            } else if let data = snapshot?.data(),
+//                      let blockedShops = data["blockedShops"] as? [String],
+//                      blockedShops.contains(shop.name) {
+//                isShopBlocked = true // Shop is blocked
+//            } else {
+//                isShopBlocked = false // Shop is not blocked
+//            }
+//        }
+//    }
 
     func endSwipeActions(){
         withAnimation(.none){endSwipe = true}
@@ -289,7 +307,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "blockedShops": FieldValue.arrayUnion([shop.id])
+            "blockedShops": FieldValue.arrayUnion([shop.name])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")
@@ -306,7 +324,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "likedShops": FieldValue.arrayUnion([shop.id])
+            "likedShops": FieldValue.arrayUnion([shop.name])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")
