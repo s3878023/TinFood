@@ -167,7 +167,7 @@ struct LoginView: View {
                     showingLoginScreen = false // Show the login screen initially
                         }
             .background(
-                NavigationLink(destination: Home(loginViewModel: loginViewModel), isActive: $loginViewModel.loginSuccess) {
+                NavigationLink(destination: Home(), isActive: $loginViewModel.loginSuccess) {
                 }
             )
             .navigationBarBackButtonHidden(true)

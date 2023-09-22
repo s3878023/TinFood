@@ -17,13 +17,13 @@ struct ContentView: View {
             }else{
                 switch loginViewModel.loginSuccessAs{
                 case "User":
-                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                    Home(homeData: homeData)
                 case "Shop":
                     MerchantView()
                 case "Admin":
                     SlidingTabView()
                 default:
-                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                    Home(homeData: homeData)
                 }
             }
 //            Text("User UUID: \(loginViewModel.userUUID)")

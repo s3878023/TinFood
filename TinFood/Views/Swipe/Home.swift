@@ -1,4 +1,3 @@
-
 //
 //  Home.swift
 //  TinFood
@@ -12,8 +11,8 @@ import FirebaseFirestore
 
 struct Home: View {
     @ObservedObject var homeData: homeViewModel = homeViewModel()
-    @ObservedObject var loginViewModel: LoginViewModel
-
+//    @ObservedObject var loginViewModel: LoginViewModel
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
     var body: some View {
         ZStack {
             Rectangle()
@@ -21,21 +20,19 @@ struct Home: View {
                 .foregroundColor(Color("background"))
             VStack{
                 HStack {
-                    Button{
-                        print("disLiked Shops: \(homeData.dislikedShops)")
-
-                    } label: {
-                        Image(systemName: "rectangle.fill.on.rectangle.fill")
+                    Button(action: {
+                        isDarkMode.toggle()
+                    }, label: {
+                        Image(systemName: isDarkMode ? "moon.fill" : "sun.max.fill")
                             .resizable()
                             .renderingMode(.template)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 22, height: 22)
-                    }
-                    .foregroundColor(Color("button"))
+                            .foregroundColor(Color("button"))
+                    })
                     .padding()
-                    
-                    
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    
                     Text("Discover")
                         .font(.title.bold())
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -128,6 +125,8 @@ struct Home: View {
                 .opacity((homeData.displaying_shops?.isEmpty ?? false) ? 0.6 : 1)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .preferredColorScheme(isDarkMode ? .light : .dark)
+
         }
         
     }
@@ -145,6 +144,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(loginViewModel: LoginViewModel())
+        Home()
     }
 }
