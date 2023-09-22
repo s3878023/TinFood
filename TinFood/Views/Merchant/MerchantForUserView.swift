@@ -1,10 +1,3 @@
-//
-//  MerchantForUserView.swift
-//  TinFood
-//
-//  Created by Quan Tong Nhat on 21/09/2023.
-//
-
 import SwiftUI
 
 struct MerchantForUserView: View {

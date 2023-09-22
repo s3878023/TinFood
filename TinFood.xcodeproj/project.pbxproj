@@ -161,11 +161,11 @@
 			children = (
 				4AE207EF2AB6B02300BA8D1A /* AddFoodView.swift */,
 				4AE207EE2AB6B02300BA8D1A /* MerchantView.swift */,
+				4A12E2EA2ABC150E0051703A /* SigninShopTest.swift */,
+				4A6213042ABD85AC0047B9EE /* ImageUploadView.swift */,
 				F4629CA82ABBF8C300671E1E /* MerchantForUserView.swift */,
 				4A1F8AED2AB974C3001E67AB /* SignUpView.swift */,
-				4A12E2EA2ABC150E0051703A /* SigninShopTest.swift */,
 				4A3CF41C2ABD7A1800F47211 /* ListView.swift */,
-				4A6213042ABD85AC0047B9EE /* ImageUploadView.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
