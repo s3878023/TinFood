@@ -37,17 +37,17 @@ struct ImageUploadView: View {
                 .disabled(uiImage == nil)
             }
             if let imageURL = imageURL {
-                            // Display the uploaded image from the URL using AsyncImage
-                            AsyncImage(url: imageURL) { image in
-                                image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 200, height: 200)
-                            }placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 200, height: 200)
-                        }
+                // Display the image URL as text
+                Text("Image URL: \(imageURL.absoluteString)")
+                    .padding()
+
+                // Provide a button to copy the URL to the clipboard
+                Button("Copy URL") {
+                    // Copy the imageURL to the clipboard
+                    UIPasteboard.general.string = imageURL.absoluteString
+                }
+                .padding()
+            }
         }
         .padding()
     }
