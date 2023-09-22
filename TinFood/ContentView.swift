@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var homeData: homeViewModel = homeViewModel()
     @StateObject private var loginViewModel = LoginViewModel()
     
     var body: some View {
-        VStack {
-            if loginViewModel.userUUID == ""{
+            if loginViewModel.userUUID == "" || loginViewModel.registrationSuccess == true{
                 LoginView(loginViewModel: loginViewModel)
             }else{
-                Home()
+                switch loginViewModel.loginSuccessAs{
+                case "User":
+                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                case "Shop":
+                    MerchantView()
+                case "Admin":
+                    SlidingTabView()
+                default:
+                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                }
             }
-            Text("User UUID: \(loginViewModel.userUUID)")
-        }
+//            Text("User UUID: \(loginViewModel.userUUID)")
+//        Home(homeData: homeData, loginViewModel: loginViewModel)
     }
 }
 

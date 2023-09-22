@@ -8,7 +8,6 @@ struct LoginView: View {
     @State private var isRegisterSheetPresented = false
     @State private var username = ""
     @State private var password = ""
-    @State private var showRegisterAlert = false
     @State private var registerUsername = ""
     @State private var registerPassword = ""
     @State private var registerConfirmPassword = ""
@@ -17,6 +16,10 @@ struct LoginView: View {
     @State private var wrongRegisterPassword = 0
     @State private var showingLoginScreen = false
     @State private var isLoggedIn = false
+    @State private var loginAs = "User"
+    @State private var registerAs = "User"
+    let loginOptions = ["User", "Shop", "Admin"]
+    let registerOptions = ["User", "Shop"]
     
     var body: some View {
         NavigationView{
@@ -44,7 +47,16 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .border(.red, width: CGFloat(wrongPassword))
                 
-                Button("Login", action: {loginViewModel.login(username: self.username, password: self.password)})
+                Picker("Login as", selection: $loginAs) {
+                    ForEach(loginOptions, id: \.self) { option in
+                        Text(option)
+                    }
+                }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 300, height: 35)
+                    .cornerRadius(10)
+                
+                Button("Login", action: {loginViewModel.login(username: self.username, password: self.password, role: self.loginAs)})
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color.green)
@@ -86,15 +98,24 @@ struct LoginView: View {
                             .cornerRadius(10)
                             .border(.red, width: CGFloat(wrongRegisterPassword))
                         
+                        Picker("Login as", selection: $loginAs) {
+                            ForEach(loginOptions, id: \.self) { option in
+                                Text(option)
+                            }
+                        }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .frame(width: 300, height: 35)
+                            .cornerRadius(10)
+                        
                         Button("Register") {
                             // Check if the password and confirm password match
                             if registerPassword == registerConfirmPassword {
                                 loginViewModel.register(username: registerUsername, password: registerPassword)
-                                showRegisterAlert = true
+//                                showRegisterAlert = true
                             } else {
                                 // Passwords don't match, handle this case (e.g., show an error message)
                                 print("Passwords do not match")
-                                showRegisterAlert = true
+//                                showRegisterAlert = true
                                 wrongRegisterPassword = 2
                             }
                         }
@@ -102,7 +123,7 @@ struct LoginView: View {
                             .frame(width: 300, height: 50)
                             .background(Color.green)
                             .cornerRadius(10)
-                            .alert(isPresented: $showRegisterAlert) {
+                            .alert(isPresented: $loginViewModel.showRegisterAlert) {
                                 if registerPassword != registerConfirmPassword{
                                     return Alert(
                                         title: Text("Password Mismatch"),
@@ -146,7 +167,7 @@ struct LoginView: View {
                     showingLoginScreen = false // Show the login screen initially
                         }
             .background(
-                NavigationLink(destination: Home(), isActive: $loginViewModel.loginSuccess) {
+                NavigationLink(destination: Home(loginViewModel: loginViewModel), isActive: $loginViewModel.loginSuccess) {
                 }
             )
             .navigationBarBackButtonHidden(true)
