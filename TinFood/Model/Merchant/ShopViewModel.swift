@@ -116,7 +116,41 @@ class ShopViewModel: ObservableObject {
                     }
                 }
         }
-    }}
+    }
+    func deleteFoodItem(foodTest: FoodTest) {
+        if let currentUser = Auth.auth().currentUser {
+            let loggedInUserEmail = currentUser.email
+
+            db.collection("ActualMerchantTest")
+                .whereField("username", isEqualTo: loggedInUserEmail)
+                .getDocuments { (querySnapshot, error) in
+                    guard let documents = querySnapshot?.documents else {
+                        print("No documents")
+                        return
+                    }
+
+                    if let shopDocument = documents.first {
+                        let shopRef = shopDocument.reference
+                        let foodCollectionRef = shopRef.collection("Food")
+                        
+                        // Delete the food item from Firestore
+                        foodCollectionRef.document(foodTest.id).delete { error in
+                            if let error = error {
+                                print("Error deleting food: \(error.localizedDescription)")
+                            } else {
+                                print("Food deleted successfully")
+                                
+                                // Update the local data by removing the deleted food item
+                                if let index = self.shoptests.firstIndex(where: { $0.id == shopDocument.documentID }) {
+                                    self.shoptests[index].foodTests = self.shoptests[index].foodTests?.filter { $0.id != foodTest.id }
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
 
 //class ShopViewModel: ObservableObject{
 //    @Published var shoptests = [ShopTest]()

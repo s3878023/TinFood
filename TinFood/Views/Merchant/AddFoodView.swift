@@ -6,20 +6,52 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseStorage
 
 struct AddFoodView: View {
-    @EnvironmentObject var shopViewModel: ShopViewModel // Inject ShopViewModel
-       @Binding var newFood: FoodTest // Binding to the new food item
+    @EnvironmentObject var shopViewModel: ShopViewModel
+    @Binding var newFood: FoodTest
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage? = nil
 
-       var body: some View {
-           // Your form for adding a new food item
-           // ...
-           
-           Button("Add Food") {
-               // Call the function in ShopViewModel to add the food
-               shopViewModel.addFood(newFood: newFood)
-           }
-       }
+
+    var body: some View {
+        NavigationView {
+            Form {
+                Section(header: Text("Food Details")) {
+                    TextField("Food Name", text: Binding<String>(
+                        get: { newFood.foodname ?? "" },
+                        set: { newValue in newFood.foodname = newValue }
+                    ))
+                    TextField("Price", text: Binding<String>(
+                        get: { newFood.price ?? "" },
+                        set: { newValue in newFood.price = newValue }
+                    ))
+                    TextField("Description", text: Binding<String>(
+                        get: { newFood.description ?? "" },
+                        set: { newValue in newFood.description = newValue }
+                    ))
+                    TextField("Image URL", text: Binding<String>(
+                        get: { newFood.image ?? "" },
+                        set: { newValue in newFood.image = newValue }
+                    ))
+                    TextField("Category", text: Binding<String>(
+                        get: { newFood.category ?? "" },
+                        set: { newValue in newFood.category = newValue }
+                    ))
+                }
+
+                Section {
+                    Button("Add Food") {
+                        // Call the function in ShopViewModel to add the food
+                        shopViewModel.addFood(newFood: newFood)
+                    }
+                }
+            }
+            .navigationTitle("Add Food")
+        }
+    }
 }
 
 struct AddFoodView_Previews: PreviewProvider {
