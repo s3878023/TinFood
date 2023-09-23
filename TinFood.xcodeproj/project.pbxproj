@@ -18,6 +18,9 @@
 		4A90AAE62ABDA0E60057895C /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90AAE52ABDA0E60057895C /* MerchantView.swift */; };
 		4ACB1A2D2ABF325A004BF25D /* LikedShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */; };
 		4ACB1A2F2ABF366D004BF25D /* LikedShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */; };
+		4ACB1A352ABF5573004BF25D /* DetailedShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A342ABF5573004BF25D /* DetailedShopViewModel.swift */; };
+		4ACB1A372ABF59B3004BF25D /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A362ABF59B3004BF25D /* Testing.swift */; };
+		4ACB1A392ABF630F004BF25D /* Testingg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A382ABF630F004BF25D /* Testingg.swift */; };
 		4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */; };
 		4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F52AB6B03400BA8D1A /* Food.swift */; };
 		A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261722AB1E7FE00E6628A /* TinFoodApp.swift */; };
@@ -74,6 +77,9 @@
 		4A90AAE52ABDA0E60057895C /* MerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
 		4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedShop.swift; sourceTree = "<group>"; };
 		4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedShopViewModel.swift; sourceTree = "<group>"; };
+		4ACB1A342ABF5573004BF25D /* DetailedShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedShopViewModel.swift; sourceTree = "<group>"; };
+		4ACB1A362ABF59B3004BF25D /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		4ACB1A382ABF630F004BF25D /* Testingg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testingg.swift; sourceTree = "<group>"; };
 		4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		4AE207F52AB6B03400BA8D1A /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		A162616F2AB1E7FE00E6628A /* TinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,7 @@
 				4A90AAE12ABDA0310057895C /* ShopViewModel.swift */,
 				4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */,
 				4A50AF322AB9843E004B72A0 /* Merchant.swift */,
+				4ACB1A342ABF5573004BF25D /* DetailedShopViewModel.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -165,6 +172,7 @@
 				A1A3571F2ABB2A7A00EA516A /* LoginViewModel.swift */,
 				4A90AAE52ABDA0E60057895C /* MerchantView.swift */,
 				4A47A03E2ABEFD3E0036F303 /* MerchantViewForUser.swift */,
+				4ACB1A362ABF59B3004BF25D /* Testing.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				4A50AF2D2AB983CE004B72A0 /* Merchant */,
 				4AE207F32AB6B02A00BA8D1A /* Food */,
 				CED850FC2AB4498C00147E90 /* AdminModel */,
+				4ACB1A382ABF630F004BF25D /* Testingg.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,6 +414,7 @@
 				4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */,
 				4A90AAE42ABDA0310057895C /* ShopViewModel.swift in Sources */,
 				E7A115F22AB6A8F300D36374 /* Home.swift in Sources */,
+				4ACB1A372ABF59B3004BF25D /* Testing.swift in Sources */,
 				CED851122AB44AB200147E90 /* SearchBarView.swift in Sources */,
 				4A90AAE62ABDA0E60057895C /* MerchantView.swift in Sources */,
 				CED8510E2AB44A8700147E90 /* ScndView.swift in Sources */,
@@ -417,6 +427,7 @@
 				CED851042AB44A0100147E90 /* HomeViewModel.swift in Sources */,
 				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
 				4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */,
+				4ACB1A392ABF630F004BF25D /* Testingg.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
 				4ACB1A2F2ABF366D004BF25D /* LikedShopViewModel.swift in Sources */,
 				E7A917122ABD80470039068D /* ImageUploadView.swift in Sources */,
@@ -430,6 +441,7 @@
 				CE73C34A2ABDA55B0064ADE9 /* ShowMoreOptionsUserView.swift in Sources */,
 				CED8510C2AB44A7400147E90 /* FirstView.swift in Sources */,
 				4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */,
+				4ACB1A352ABF5573004BF25D /* DetailedShopViewModel.swift in Sources */,
 				E4705C1D2ABC11E900386A69 /* LikeRes.swift in Sources */,
 				A1A3571E2ABAEF2400EA516A /* LoginView.swift in Sources */,
 				CED851062AB44A2B00147E90 /* SlidingTabView.swift in Sources */,

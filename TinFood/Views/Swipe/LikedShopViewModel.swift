@@ -13,6 +13,7 @@ class LikedShopViewModel: ObservableObject {
     @Published var likedShops: [Shop] = []
 
     private var db = Firestore.firestore()
+  
 
     func fetchLikedShops() {
         let currentUser = Auth.auth().currentUser
