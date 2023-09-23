@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A1F8AE62AB963BB001E67AB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1F8AE52AB963BB001E67AB /* Authentication.swift */; };
 		4A357DAA2ABDA2AD004508BE /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A357DA92ABDA2AD004508BE /* AddFoodView.swift */; };
+		4A47A03F2ABEFD3E0036F303 /* MerchantViewForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A47A03E2ABEFD3E0036F303 /* MerchantViewForUser.swift */; };
 		4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */; };
 		4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */; };
 		4A50AF332AB9843E004B72A0 /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50AF322AB9843E004B72A0 /* Merchant.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		4A1F8AE52AB963BB001E67AB /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		4A357DA92ABDA2AD004508BE /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		4A47A03E2ABEFD3E0036F303 /* MerchantViewForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewForUser.swift; sourceTree = "<group>"; };
 		4A50AF2B2AB98236004B72A0 /* TestingDisplayDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDisplayDatabase.swift; sourceTree = "<group>"; };
 		4A50AF302AB98400004B72A0 /* MerchantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewModel.swift; sourceTree = "<group>"; };
 		4A50AF322AB9843E004B72A0 /* Merchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				4A5F1B452AB98FA8000A25B6 /* MerchantViewDisplayView.swift */,
 				4A90AAE52ABDA0E60057895C /* MerchantView.swift */,
 				4A357DA92ABDA2AD004508BE /* AddFoodView.swift */,
+				4A47A03E2ABEFD3E0036F303 /* MerchantViewForUser.swift */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
 				E7A917122ABD80470039068D /* ImageUploadView.swift in Sources */,
+				4A47A03F2ABEFD3E0036F303 /* MerchantViewForUser.swift in Sources */,
 				4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */,
 				4A90AAE22ABDA0310057895C /* FoodTest.swift in Sources */,
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,

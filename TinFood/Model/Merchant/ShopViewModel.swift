@@ -40,7 +40,7 @@ class ShopViewModel: ObservableObject {
                         // Fetch the FoodTest subcollection
                         group.enter() // Enter the dispatch group
 
-                        let foodTestsCollection = queryDocumentSnapshot.reference.collection("Food")
+                        let foodTestsCollection = queryDocumentSnapshot.reference.collection("food")
                         var foodTests: [FoodTest] = []
 
                         foodTestsCollection.getDocuments { (foodQuerySnapshot, foodError) in
@@ -92,7 +92,7 @@ class ShopViewModel: ObservableObject {
 
                     if let shopDocument = documents.first {
                         let shopRef = shopDocument.reference
-                        let foodCollectionRef = shopRef.collection("Food")
+                        let foodCollectionRef = shopRef.collection("food")
 
                         // Convert the newFood object to a dictionary
                         let foodData: [String: Any] = [
@@ -129,7 +129,7 @@ class ShopViewModel: ObservableObject {
 
                     if let shopDocument = documents.first {
                         let shopRef = shopDocument.reference
-                        let foodCollectionRef = shopRef.collection("Food")
+                        let foodCollectionRef = shopRef.collection("food")
                         
                         // Delete the food item from Firestore
                         foodCollectionRef.document(foodTest.id).delete { error in

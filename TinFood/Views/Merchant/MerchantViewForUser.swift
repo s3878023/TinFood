@@ -1,22 +1,13 @@
 //
-//  MerchantView.swift
+//  MerchantViewForUser.swift
 //  TinFood
 //
-//  Created by Nhật Quân on 22/09/2023.
+//  Created by Nhật Quân on 23/09/2023.
 //
-//
-//  MerchantView.swift
-//  TinFood
-//
-//  Created by Nhật Quân on 15/09/2023.
-//
-
 
 import SwiftUI
-import Firebase
 
-
-struct MerchantView: View {
+struct MerchantViewForUser: View {
     //    @ObservedObject var foodModel = FoodViewModel()
     @StateObject private var merchantViewModel = MerchantViewModel()
     @StateObject private var shopViewModel = ShopViewModel()
@@ -58,9 +49,6 @@ struct MerchantView: View {
                                             .font(.system(size: 12))
                                     }
                                     Spacer()
-                                    Image(systemName: "person.circle.fill")
-                                        .font(.system(size: 40))
-                                        .foregroundColor(Color("button"))
                                     
                                 }
                                 .frame(maxWidth: 350)
@@ -69,11 +57,6 @@ struct MerchantView: View {
                                     Text("Food")
                                         .fontWeight(.bold)
                                     Spacer()
-                                    NavigationLink(destination: ImageUploaddView(newFood: $newFood).environmentObject(shopViewModel)) {
-                                        Text("Add new food")
-                                            .foregroundColor(Color("button"))
-                                            .fontWeight(.bold)
-                                    }
                                 }
                                 .frame(height: 50)
                                 .frame(maxWidth: 350)
@@ -114,13 +97,6 @@ struct MerchantView: View {
                                             Text(foodTest.category ?? "")
                                                 .font(.system(size:12))
                                         }
-                                        
-                                        Button(action: {
-                                            shopViewModel.deleteFoodItem(foodTest: foodTest)
-                                        }) {
-                                            Image(systemName: "trash.fill")
-                                                .foregroundColor(.red)
-                                        }
                                     }
                                     .frame(height : 80)
                                     .frame(maxWidth: 350)
@@ -145,52 +121,10 @@ struct MerchantView: View {
          
         
     }
-}  
+}
 
-struct MerchantView_Previews: PreviewProvider {
+struct MerchantViewForUser_Previews: PreviewProvider {
     static var previews: some View {
-        MerchantView()
+        MerchantViewForUser()
     }
 }
-//                          HStack{
-//                              AsyncImage(url: URL(string: merchant.image ?? "")) { phase in
-//                                  switch phase {
-//                                  case .empty:
-//                                      // Placeholder or loading view if needed
-//                                      Text("Loading...")
-//                                  case .success(let image):
-//                                      image
-//                                          .resizable() // Make the image resizable
-//                                          .aspectRatio(contentMode: .fit)
-//                                          .frame(width:90)
-//                                  case .failure:
-//                                      // Handle error if image fails to load
-//                                      Text("Image loading failed")
-//                                  @unknown default:
-//                                      // Handle unknown cases or provide a fallback view
-//                                      Text("Unknown state")
-//                                  }
-//                              }
-//                              .frame(width: 100, height: 100)
-//                              VStack(alignment: .leading){
-//                                  Text(merchant.foodname ?? "")
-//                                      .font(.system(size:20))
-//                                  Text(merchant.description ?? "")
-//                                      .font(.system(size:12))
-//
-//                              }
-//                              Spacer()
-//                              VStack(alignment: .trailing){
-//                                  Text(merchant.price ?? "")
-//                                      .fontWeight(.bold)
-//                                      .font(.system(size:20))
-//                                  Text(merchant.category ?? "")
-//                                      .font(.system(size:12))
-//                              }
-//                          }
-//                          .frame(height : 80)
-//                          .frame(maxWidth: 350)
-//                          Divider()
-//                           .frame(height: 1)
-//                           .background(Color("components"))
-//                           .frame(maxWidth: 350)
