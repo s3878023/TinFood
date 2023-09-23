@@ -16,11 +16,11 @@ class ShopViewModel: ObservableObject {
 
     init() {
         if let currentUser = Auth.auth().currentUser {
-            let loggedInUserEmail = currentUser.email
+            let loggedInUserEmail = currentUser.uid
 
             // Retrieve shop data for the logged-in user
-            db.collection("ActualMerchantTest")
-                .whereField("username", isEqualTo: loggedInUserEmail)
+            db.collection("Shops")
+                .whereField(FieldPath.documentID(), isEqualTo: loggedInUserEmail)
                 .addSnapshotListener { (querySnapshot, error) in
                     guard let documents = querySnapshot?.documents else {
                         print("No documents")
@@ -33,8 +33,6 @@ class ShopViewModel: ObservableObject {
 
                     for queryDocumentSnapshot in documents {
                         let data = queryDocumentSnapshot.data()
-                        let username = data["username"] as? String ?? ""
-                        let password = data["password"] as? String ?? ""
                         let storename = data["storename"] as? String ?? ""
                         let image = data["image"] as? String ?? ""
                         let address = data["address"] as? String ?? ""
@@ -65,7 +63,7 @@ class ShopViewModel: ObservableObject {
                             }
 
                             // Create the ShopTest object with the FoodTest subcollection
-                            let shopTest = ShopTest(username: username, password: password, storename: storename, image: image, address: address, foodTests: foodTests)
+                            let shopTest = ShopTest(storename: storename, image: image, address: address, foodTests: foodTests)
                             shopTests.append(shopTest)
 
                             group.leave() // Leave the dispatch group after fetching food documents
@@ -81,11 +79,11 @@ class ShopViewModel: ObservableObject {
     }
     func addFood(newFood: FoodTest) {
         if let currentUser = Auth.auth().currentUser {
-            let loggedInUserEmail = currentUser.email
+            let loggedInUserEmail = currentUser.uid
 
             // Add the new food item to the "Food" subcollection of the current shop
             db.collection("ActualMerchantTest")
-                .whereField("username", isEqualTo: loggedInUserEmail)
+                .whereField(FieldPath.documentID(), isEqualTo: loggedInUserEmail)
                 .getDocuments { (querySnapshot, error) in
                     guard let documents = querySnapshot?.documents else {
                         print("No documents")
@@ -119,10 +117,10 @@ class ShopViewModel: ObservableObject {
     }
     func deleteFoodItem(foodTest: FoodTest) {
         if let currentUser = Auth.auth().currentUser {
-            let loggedInUserEmail = currentUser.email
+            let loggedInUserEmail = currentUser.uid
 
             db.collection("ActualMerchantTest")
-                .whereField("username", isEqualTo: loggedInUserEmail)
+                .whereField(FieldPath.documentID(), isEqualTo: loggedInUserEmail)
                 .getDocuments { (querySnapshot, error) in
                     guard let documents = querySnapshot?.documents else {
                         print("No documents")
