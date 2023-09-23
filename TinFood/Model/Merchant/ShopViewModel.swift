@@ -82,7 +82,7 @@ class ShopViewModel: ObservableObject {
             let loggedInUserEmail = currentUser.uid
 
             // Add the new food item to the "Food" subcollection of the current shop
-            db.collection("ActualMerchantTest")
+            db.collection("Shops")
                 .whereField(FieldPath.documentID(), isEqualTo: loggedInUserEmail)
                 .getDocuments { (querySnapshot, error) in
                     guard let documents = querySnapshot?.documents else {
@@ -119,7 +119,7 @@ class ShopViewModel: ObservableObject {
         if let currentUser = Auth.auth().currentUser {
             let loggedInUserEmail = currentUser.uid
 
-            db.collection("ActualMerchantTest")
+            db.collection("Shops")
                 .whereField(FieldPath.documentID(), isEqualTo: loggedInUserEmail)
                 .getDocuments { (querySnapshot, error) in
                     guard let documents = querySnapshot?.documents else {
