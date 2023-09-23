@@ -65,9 +65,9 @@ class HomeViewModel: ObservableObject {
             }
             self.shops = documents.map {(queryDocumentSnapshot) -> Shop in
                 let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String ?? ""
-                let place = data["place"] as? String ?? ""
-                let profilePic = data["profilePic"] as? String ?? ""
+                let name = data["storename"] as? String ?? ""
+                let place = data["address"] as? String ?? ""
+                let profilePic = data["image"] as? String ?? ""
                 return Shop(storename: name, documentID: queryDocumentSnapshot.documentID, address: place, image: profilePic)
             }
         }
