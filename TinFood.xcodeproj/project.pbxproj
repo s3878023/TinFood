@@ -16,6 +16,8 @@
 		4A90AAE32ABDA0310057895C /* ShopTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90AAE02ABDA0310057895C /* ShopTest.swift */; };
 		4A90AAE42ABDA0310057895C /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90AAE12ABDA0310057895C /* ShopViewModel.swift */; };
 		4A90AAE62ABDA0E60057895C /* MerchantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90AAE52ABDA0E60057895C /* MerchantView.swift */; };
+		4ACB1A2D2ABF325A004BF25D /* LikedShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */; };
+		4ACB1A2F2ABF366D004BF25D /* LikedShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */; };
 		4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */; };
 		4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F52AB6B03400BA8D1A /* Food.swift */; };
 		A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261722AB1E7FE00E6628A /* TinFoodApp.swift */; };
@@ -66,6 +68,8 @@
 		4A90AAE02ABDA0310057895C /* ShopTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTest.swift; sourceTree = "<group>"; };
 		4A90AAE12ABDA0310057895C /* ShopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		4A90AAE52ABDA0E60057895C /* MerchantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantView.swift; sourceTree = "<group>"; };
+		4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedShop.swift; sourceTree = "<group>"; };
+		4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedShopViewModel.swift; sourceTree = "<group>"; };
 		4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		4AE207F52AB6B03400BA8D1A /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		A162616F2AB1E7FE00E6628A /* TinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +281,8 @@
 				E7A115F12AB6A8F300D36374 /* Home.swift */,
 				E7A115EF2AB6A8D900D36374 /* stackCardView.swift */,
 				E7A115F32AB6A90800D36374 /* Shop.swift */,
+				4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */,
+				4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */,
 			);
 			path = Swipe;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16261752AB1E7FE00E6628A /* ContentView.swift in Sources */,
+				4ACB1A2D2ABF325A004BF25D /* LikedShop.swift in Sources */,
 				CED851082AB44A3C00147E90 /* HomeView.swift in Sources */,
 				CED850FF2AB449C300147E90 /* UserModel.swift in Sources */,
 				E7A115EE2AB6A8C100D36374 /* homeViewModel.swift in Sources */,
@@ -388,6 +395,7 @@
 				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
 				4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
+				4ACB1A2F2ABF366D004BF25D /* LikedShopViewModel.swift in Sources */,
 				E7A917122ABD80470039068D /* ImageUploadView.swift in Sources */,
 				4A47A03F2ABEFD3E0036F303 /* MerchantViewForUser.swift in Sources */,
 				4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */,

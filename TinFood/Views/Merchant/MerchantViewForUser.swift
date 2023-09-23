@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MerchantViewForUser: View {
     //    @ObservedObject var foodModel = FoodViewModel()
-    @StateObject private var merchantViewModel = MerchantViewModel()
     @StateObject private var shopViewModel = ShopViewModel()
     @State private var showAddFoodSheet = false
     @State private var newFood = FoodTest()
@@ -118,7 +117,7 @@ struct MerchantViewForUser: View {
             
         }
         .navigationBarBackButtonHidden(true)
-         
+        
         
     }
 }

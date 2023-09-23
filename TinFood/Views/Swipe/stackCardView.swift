@@ -152,7 +152,7 @@ struct stackCardView: View {
                     print("Error fetching Firestore document: \(error.localizedDescription)")
                 } else if let data = snapshot?.data(),
                           let blockedShops = data["blockedShops"] as? [String],
-                          let likedShops = data["likedShops"] as? [String],
+                          let likedShops =  data["likedShops"] as? [String],
                           (blockedShops.contains(shop.storename) || likedShops.contains(shop.storename)) {
                     isShopBlocked = true // Shop is blocked or liked
                 } else {

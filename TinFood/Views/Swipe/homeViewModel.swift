@@ -49,4 +49,32 @@ class homeViewModel: ObservableObject {
         } ?? 0
         return index
     }
+    
+    func fetchLikedShops() {
+            // Create a reference to the "Shops" collection in Firestore
+            let shopsRef = db.collection("Shops")
+
+            // Create a query to fetch shops where the shop ID is in the likedShops array
+        shopsRef.whereField(FieldPath.documentID(), in: likedShops).getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching liked shops: \(error.localizedDescription)")
+                } else {
+                    if let snapshot = snapshot {
+                        let likedShops = snapshot.documents.compactMap { document in
+                            let data = document.data()
+                            return Shop(
+//                                id: document.documentID,
+                                storename: data["storename"] as? String ?? "",
+                                address: data["address"] as? String ?? "",
+                                image: data["image"] as? String ?? ""
+                            )
+                        }
+                        
+                        // You can now use the `likedShops` array to access the liked shops
+                        print("Liked Shops: \(likedShops)")
+                    }
+                }
+            }
+        }
+    
 }

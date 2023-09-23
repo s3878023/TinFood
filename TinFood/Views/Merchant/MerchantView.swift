@@ -18,7 +18,6 @@ import Firebase
 
 struct MerchantView: View {
     //    @ObservedObject var foodModel = FoodViewModel()
-    @StateObject private var merchantViewModel = MerchantViewModel()
     @StateObject private var shopViewModel = ShopViewModel()
     @State private var showAddFoodSheet = false
     @State private var newFood = FoodTest()
@@ -58,6 +57,7 @@ struct MerchantView: View {
                                             .font(.system(size: 12))
                                     }
                                     Spacer()
+                                    
                                     Image(systemName: "person.circle.fill")
                                         .font(.system(size: 40))
                                         .foregroundColor(Color("button"))
@@ -120,6 +120,7 @@ struct MerchantView: View {
                                         }) {
                                             Image(systemName: "trash.fill")
                                                 .foregroundColor(.red)
+                                                .font(.system(size: 24))
                                         }
                                     }
                                     .frame(height : 80)
