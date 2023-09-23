@@ -40,13 +40,12 @@ struct Home: View {
                     
                 
                     Button{
-                        print("Liked Shops: \(homeData.likedShops)")
                     }label: {
-                        Image(systemName: "person.fill")
+                        Image(systemName: "power.circle.fill")
                             .resizable()
                             .renderingMode(.template)
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 22, height: 22)
+                            .frame(width: 30, height: 30)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding()
@@ -76,17 +75,6 @@ struct Home: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 HStack(spacing: 15){
                     Button{
-                        
-                    }label: {
-                        Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(13)
-                            .background(Color(.gray))
-                            .clipShape(Circle())
-                    }
-                    Button{
                         doSwipe()
                     }label: {
                         Image(systemName: "xmark")
@@ -97,17 +85,7 @@ struct Home: View {
                             .background(Color("myRed"))
                             .clipShape(Circle())
                     }
-                    Button{
-                        
-                    }label: {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
-                            .padding(15)
-                            .background(Color("myCyan"))
-                            .clipShape(Circle())
-                    }
+
                     Button{
                         doSwipe(rightSwipe: true)
                     }label: {
@@ -117,6 +95,17 @@ struct Home: View {
                             .shadow(radius: 5)
                             .padding(15)
                             .background(Color("myGreen"))
+                            .clipShape(Circle())
+                    }
+                    Button{
+
+                    }label: {
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.white)
+                            .shadow(radius: 5)
+                            .padding(15)
+                            .background(Color("myYellow"))
                             .clipShape(Circle())
                     }
                 }
