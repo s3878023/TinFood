@@ -57,7 +57,7 @@
 		E7A115F02AB6A8D900D36374 /* stackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115EF2AB6A8D900D36374 /* stackCardView.swift */; };
 		E7A115F22AB6A8F300D36374 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F12AB6A8F300D36374 /* Home.swift */; };
 		E7A115F42AB6A90800D36374 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A115F32AB6A90800D36374 /* Shop.swift */; };
-		E7A917122ABD80470039068D /* imageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A917112ABD80470039068D /* imageUpload.swift */; };
+		E7A917122ABD80470039068D /* ImageUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A917112ABD80470039068D /* ImageUploadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +101,7 @@
 		E7A115EF2AB6A8D900D36374 /* stackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stackCardView.swift; sourceTree = "<group>"; };
 		E7A115F12AB6A8F300D36374 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E7A115F32AB6A90800D36374 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
-		E7A917112ABD80470039068D /* imageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageUpload.swift; sourceTree = "<group>"; };
+		E7A917112ABD80470039068D /* ImageUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */,
-				E7A917112ABD80470039068D /* imageUpload.swift */,
+				E7A917112ABD80470039068D /* ImageUploadView.swift */,
 				E7A115F12AB6A8F300D36374 /* Home.swift */,
 				E7A115EF2AB6A8D900D36374 /* stackCardView.swift */,
 				E7A115F32AB6A90800D36374 /* Shop.swift */,
@@ -404,7 +404,7 @@
 				4A50AF312AB98400004B72A0 /* MerchantViewModel.swift in Sources */,
 				4A50AF2C2AB98236004B72A0 /* TestingDisplayDatabase.swift in Sources */,
 				A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */,
-				E7A917122ABD80470039068D /* imageUpload.swift in Sources */,
+				E7A917122ABD80470039068D /* ImageUploadView.swift in Sources */,
 				4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */,
 				4A90AAE22ABDA0310057895C /* FoodTest.swift in Sources */,
 				CED851142AB44AC900147E90 /* UserRowView.swift in Sources */,

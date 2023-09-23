@@ -11,6 +11,8 @@ struct LoginView: View {
     @State private var registerUsername = ""
     @State private var registerPassword = ""
     @State private var registerConfirmPassword = ""
+    @State private var registerAddress = ""
+    @State private var registerStoreName = ""
     @State private var wrongUsername = 0
     @State private var wrongPassword = 0
     @State private var wrongRegisterPassword = 0
@@ -18,6 +20,7 @@ struct LoginView: View {
     @State private var isLoggedIn = false
     @State private var loginAs = "User"
     @State private var registerAs = "User"
+    @State private var profileImageUrl: URL?
     let loginOptions = ["User", "Shop", "Admin"]
     let registerOptions = ["User", "Shop"]
     
@@ -77,6 +80,9 @@ struct LoginView: View {
                             .bold()
                             .padding()
                         
+//                        Text($profileImageUrl)
+                        ImageUploadView(imageURL: $profileImageUrl)
+                        
                         TextField("Username", text: $registerUsername)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -98,8 +104,25 @@ struct LoginView: View {
                             .cornerRadius(10)
                             .border(.red, width: CGFloat(wrongRegisterPassword))
                         
-                        Picker("Login as", selection: $loginAs) {
-                            ForEach(loginOptions, id: \.self) { option in
+                        // Use a conditional statement to display fields based on the selected value of the Picker
+                        if registerAs == "Shop" {
+                            TextField("Address", text: $registerAddress)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.05))
+                                .cornerRadius(10)
+                                .border(.red, width: CGFloat(wrongUsername))
+                            
+                            TextField("Store Name", text: $registerStoreName)
+                                .padding()
+                                .frame(width: 300, height: 50)
+                                .background(Color.black.opacity(0.05))
+                                .cornerRadius(10)
+                                .border(.red, width: CGFloat(wrongUsername))
+                        }
+                        
+                        Picker("Register as", selection: $registerAs) {
+                            ForEach(registerOptions, id: \.self) { option in
                                 Text(option)
                             }
                         }
@@ -110,7 +133,25 @@ struct LoginView: View {
                         Button("Register") {
                             // Check if the password and confirm password match
                             if registerPassword == registerConfirmPassword {
-                                loginViewModel.register(username: registerUsername, password: registerPassword)
+                                if registerPassword == registerConfirmPassword {
+                                    if registerAs == "User" {
+                                        loginViewModel.register(
+                                            username: registerUsername,
+                                            password: registerPassword,
+                                            profileImageUrlString: profileImageUrl?.absoluteString ?? "https://firebasestorage.googleapis.com/v0/b/tinfood-17312.appspot.com/o/avatar.png?alt=media&token=c644573a-9f61-4dd5-a050-1130233a9143"
+                                        )
+                                    } else if registerAs == "Shop" {
+                                        loginViewModel.registerShop(
+                                            username: registerUsername,
+                                            password: registerPassword,
+                                            profileImageUrlString: profileImageUrl?.absoluteString ?? "https://firebasestorage.googleapis.com/v0/b/tinfood-17312.appspot.com/o/avatar.png?alt=media&token=c644573a-9f61-4dd5-a050-1130233a9143",
+                                            restaurantName: registerStoreName,
+                                            address: registerAddress
+                                        )
+                                    }
+                                }
+
+                                
 //                                showRegisterAlert = true
                             } else {
                                 // Passwords don't match, handle this case (e.g., show an error message)
@@ -138,8 +179,6 @@ struct LoginView: View {
                                         title: Text("Registration Success"),
                                         message: Text("You have successfully registered."),
                                         dismissButton: .default(Text("OK")) {
-                                            // Optionally, you can perform any action after a successful registration
-                                            // For example, you might navigate to another view or close the registration sheet.
                                             isRegisterSheetPresented.toggle()
                                         }
                                     )

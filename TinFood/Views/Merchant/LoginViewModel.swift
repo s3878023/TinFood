@@ -133,7 +133,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    func register(username: String, password: String) {
+    func register(username: String, password: String, profileImageUrlString: String) {
         Auth.auth().createUser(withEmail: username, password: password) { (result, error) in
             if let error = error {
                 // Fetch error directly from Firebase authentication
@@ -154,7 +154,7 @@ class LoginViewModel: ObservableObject {
                     // Update the @Published property
                     self.userUUID = uid
                     self.registrationSuccess = true
-                    self.registerNewUserDataIntoFirebase(name: username)
+                    self.registerNewUserDataIntoFirebase(name: username, profileImageUrlString: profileImageUrlString)
                     self.showRegisterAlert = true
                 }
             }
@@ -162,7 +162,7 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func registerNewUserDataIntoFirebase(name: String) {
+    func registerNewUserDataIntoFirebase(name: String, profileImageUrlString: String) {
         let documentID = self.userUUID
 
         let collectionName = "User"
@@ -171,7 +171,7 @@ class LoginViewModel: ObservableObject {
         
         db.collection(collectionName).document(documentID).setData([
             "name": name,
-            "profilePicture": "https://firebasestorage.googleapis.com/v0/b/tinfood-17312.appspot.com/o/avatar.png?alt=media&token=c644573a-9f61-4dd5-a050-1130233a9143",
+            "profilePicture": profileImageUrlString,
             "likedShops": [String](),
             "likedCategory": [String](),
             "blockedShops": [String]()
@@ -185,7 +185,79 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    func registerNewShopDataIntoFirebase(){}
+    func registerShop(username: String, password: String, profileImageUrlString: String, restaurantName: String, address: String) {
+        Auth.auth().createUser(withEmail: username, password: password) { (result, error) in
+            if let error = error {
+                // Fetch error directly from Firebase authentication
+                print("Registration failed: \(error.localizedDescription)")
+                self.registrationError = error.localizedDescription
+                print(self.registrationError)
+                self.registrationSuccess = false
+                self.showRegisterAlert = true
+            } else {
+                // Registration successful
+                if let user = result?.user {
+                    let uid = user.uid
+                    print("Registration successful! User UID: \(uid)")
+                    //Register to data
+                    // Store the UID in UserDefaults or use it as needed
+                    UserDefaults.standard.set(uid, forKey: "UUID")
+                    
+                    // Update the @Published property
+                    self.userUUID = uid
+                    self.registrationSuccess = true
+                    self.registerNewShopDataIntoFirebase(name: restaurantName, address: address, profileImageUrlString: profileImageUrlString)
+                    self.showRegisterAlert = true
+                }
+            }
+        }
+        
+    }
+    
+    func registerNewShopDataIntoFirebase(name: String, address: String, profileImageUrlString: String) {
+        let documentID = self.userUUID
+        let collectionName = "Shops"
+        let subcollectionName = "food"
+
+        let db = Firestore.firestore()
+
+        // Reference to the shop document
+        let shopReference = db.collection(collectionName).document(documentID)
+
+        // Structure of "food" document
+        let foodDocument: [String: Any] = [
+            "category": "",   // String
+            "description": "",   // String
+            "foodName": "",   // String
+            "image": "",   // String
+            "price": ""   // String
+        ]
+
+        // Add "food" documents to the subcollection of Shops collection
+        let foodCollectionReference = shopReference.collection(subcollectionName)
+
+        foodCollectionReference.addDocument(data: foodDocument) { error in
+            if let error = error {
+                print("Error adding document to subcollection: \(error.localizedDescription)")
+            } else {
+                print("Document added to subcollection successfully")
+            }
+        }
+
+        // Update the shop document with other data
+        shopReference.setData([
+            "storename": name,
+            "image": profileImageUrlString,
+            "address": address
+        ]) { error in
+            if let error = error {
+                print("Error updating Firestore: \(error.localizedDescription)")
+            } else {
+                print("Registered successfully")
+            }
+        }
+    }
+
     
     func userExistsWithUUIDAndRole(uuid: String, role: String, completion: @escaping (Bool) -> Void) {
         
