@@ -15,7 +15,7 @@ struct ContentView: View {
             if loginViewModel.userUUID == "" || loginViewModel.registrationSuccess == true{
                 LoginView(loginViewModel: loginViewModel)
             }else{
-                switch loginViewModel.loginSuccessAs{
+                switch UserDefaults.standard.string(forKey: "loginSuccessAs"){
                 case "User":
                     Home(homeData: homeData)
                 case "Shop":

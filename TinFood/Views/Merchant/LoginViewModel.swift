@@ -64,6 +64,7 @@ class LoginViewModel: ObservableObject {
                             // Update the @Published property
                             self.userUUID = uid
                             self.loginSuccessAs = "User"
+                            UserDefaults.standard.set("User", forKey: "loginSuccessAs")
                             print("Login successful as User ! User UID: \(uid)")
                         }
                     }
@@ -81,7 +82,7 @@ class LoginViewModel: ObservableObject {
                 } else if let user = result?.user {
                     let uid = user.uid
 
-                    fetchAllDocumentIDsFromUserCollection(collectionName: "Shops") { documentIDs in
+                    fetchAllDocumentIDsFromUserCollection(collectionName: "ActualMerchantTest") { documentIDs in
                         print(documentIDs)
                         if documentIDs.contains(uid){
                             self.loginSuccess = true
@@ -90,6 +91,7 @@ class LoginViewModel: ObservableObject {
                             // Update the @Published property
                             self.userUUID = uid
                             self.loginSuccessAs = "Shop"
+                            UserDefaults.standard.set("Shop", forKey: "loginSuccessAs")
                             print("Login successful as Shop! Shop UID: \(uid)")
                         }
                     }
@@ -116,6 +118,7 @@ class LoginViewModel: ObservableObject {
                             // Update the @Published property
                             self.userUUID = uid
                             self.loginSuccessAs = "Admin"
+                            UserDefaults.standard.set("Admin", forKey: "loginSuccessAs")
                             print("Login successful as Shop! Shop UID: \(uid)")
                         }
                     }
