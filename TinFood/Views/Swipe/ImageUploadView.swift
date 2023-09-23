@@ -147,10 +147,5 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-//struct ImageUploadView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImageUploadView(imageURL: )
-//    }
-//}
 
 
