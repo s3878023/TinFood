@@ -30,6 +30,7 @@ class homeViewModel: ObservableObject {
                         let data = document.data()
                         _ = document.documentID
                         return Shop(
+                            id : document.documentID,
 //                            id: data["id"] as? String ?? "",
                             storename: data["storename"] as? String ?? "",
                             address: data["address"] as? String ?? "",

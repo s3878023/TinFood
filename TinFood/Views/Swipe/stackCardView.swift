@@ -177,7 +177,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "blockedShops": FieldValue.arrayUnion([shop.storename])
+            "blockedShops": FieldValue.arrayUnion([shop.id])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")
@@ -194,7 +194,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "likedShops": FieldValue.arrayUnion([shop.storename])
+            "likedShops": FieldValue.arrayUnion([shop.id])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")
