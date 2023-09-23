@@ -12,7 +12,7 @@ struct ShowMoreOptionViewMerc: View {
     
     var body: some View {
         if let selectedShop = viewModel.selectedShop {
-            Text("More Information about \(selectedShop.name)")
+            Text("More Information about \(selectedShop.storename)")
         } else {
             Text("No shop selected") // Display a message when no user is selected
         }

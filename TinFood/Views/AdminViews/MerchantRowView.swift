@@ -13,7 +13,7 @@ struct MerchantsRowView: View {
     @ObservedObject var viewModel: HomeViewModel
     var body: some View {
         HStack {
-            Text(merchant.name)
+            Text(merchant.storename)
                 .font(.system(size: 20))
             Spacer()
             Button(action: {
