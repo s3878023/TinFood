@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
 
 class LoginViewModel: ObservableObject {
     @Published var userUUID: String = ""
@@ -17,6 +18,7 @@ class LoginViewModel: ObservableObject {
     @Published var loginSuccessAs = ""
     
     private var db = Firestore.firestore()
+    
 
     
     init() {
