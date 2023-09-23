@@ -42,48 +42,59 @@ struct ShowMoreOptionViewMerc: View {
                         }
                     }
                     .padding(.vertical,30)
-                    HStack {
-                        Text("Name:")
-                            .offset(x: 10, y: 0)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("button")) // Customize the text color if needed
-                        Spacer()
-                        Text(selectedShop.storename)
-                            .foregroundColor(Color("text"))
-                            .font(.system(size: 25))
-                            .fontWeight(.bold)
-                            .fontWeight(.regular) // Customize font weight if needed
-                        Spacer()
+                    VStack {
+                        VStack {
+                            HStack {
+                                Text("Name:")
+                                    .offset(x: 10, y: 0)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("button")) // Customize the text color if needed
+                                Spacer()
+                                Text(selectedShop.storename)
+                                    .foregroundColor(Color("text"))
+                                    .offset(x:10, y:0)
+                                    .font(.system(size: 25)) // You can adjust the initial font size
+                                    .fontWeight(.regular) // Customize font weight if needed
+                                    .lineLimit(nil) // Allow text to wrap
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.leading, 10) // Adjust the left padding
+                                Spacer()
+                            }
+                            .frame(width: 350)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("row"))
+                                    .frame(height: max(50, getTextHeight(selectedShop.storename)))
+                            )
+                        }
+                        .padding(.bottom, 35)
+                        VStack {
+                            HStack {
+                                Text("Address:")
+                                    .offset(x: 10, y: 0)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("button")) // Customize the text color if needed
+                                Spacer()
+                                Text(selectedShop.address)
+                                    .foregroundColor(Color("text"))
+                                    .font(.system(size: 17)) // You can adjust the initial font size
+                                    .fontWeight(.regular) // Customize font weight if needed
+                                    .lineLimit(nil) // Allow text to wrap
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.leading, 10) // Adjust the left padding
+                                Spacer()
+                            }
+                            .frame(width: 350)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("row"))
+                                    .frame(height: max(50, getTextHeight(selectedShop.address)))
+                            )
+                        }
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("row"))
-                            .frame(height: 50)
-
-                    )
-                    .padding(.bottom, 50)
-
-                    // Shop address
-                    HStack {
-                        Text("Address:")
-                            .offset(x: 10, y: 0)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("button")) // Customize the text color if needed
-                        Spacer()
-                        Text(selectedShop.address)
-                            .foregroundColor(Color("text"))
-                            .font(.body)
-                            .fontWeight(.regular) // Customize font weight if needed
-                        Spacer()
-                    }
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("row"))
-                            .frame(height: 50)
-                    )
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 100)
                     Image(systemName: "trash")
                         .onTapGesture {
                             selectedIndexToDelete = viewModel.shops.firstIndex { $0.id == selectedShop.id }
@@ -118,10 +129,21 @@ struct ShowMoreOptionViewMerc: View {
             Text("No shop selected")
         }
     }
-}
-struct ShowMoreOptionViewMerc_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = HomeViewModel()
-        return ShowMoreOptionViewMerc(viewModel: viewModel)
+    // Function to calculate the height of text based on its content
+    private func getTextHeight(_ text: String) -> CGFloat {
+        let font = UIFont.systemFont(ofSize: 17) // You can adjust the font size
+        let textWidth: CGFloat = 200 // You can adjust the width
+        let boundingRect = CGSize(width: textWidth, height: .greatestFiniteMagnitude)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let attributes = [NSAttributedString.Key.font: font]
+        
+        let rect = NSString(string: text).boundingRect(
+            with: boundingRect,
+            options: options,
+            attributes: attributes,
+            context: nil
+        )
+        
+        return ceil(rect.height)
     }
 }

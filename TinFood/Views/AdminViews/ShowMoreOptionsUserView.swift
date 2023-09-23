@@ -62,7 +62,6 @@ struct ShowMoreOptionView: View {
 
                     )
                     .padding(.bottom, 50)
-
                     // Shop address
                     HStack {
                         Text("Address:")
