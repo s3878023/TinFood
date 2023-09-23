@@ -58,9 +58,9 @@ class homeViewModel: ObservableObject {
                         let id = document.documentID
                         return Shop(
 //                            id: data["id"] as? String ?? "",
-                            name: data["name"] as? String ?? "",
-                            place: data["place"] as? String ?? "",
-                            profilePic: data["profilePic"] as? String ?? ""
+                            storename: data["storename"] as? String ?? "",
+                            address: data["address"] as? String ?? "",
+                            image: data["image"] as? String ?? ""
                         )
                     }
                     self.displaying_shops = self.fetch_shops

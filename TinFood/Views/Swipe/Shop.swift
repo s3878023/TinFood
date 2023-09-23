@@ -23,9 +23,9 @@ import SwiftUI
 
 struct Shop: Identifiable{
     var id = UUID().uuidString
-    var name: String
+    var storename: String
     var documentID: String?
-    var place: String
-    var profilePic: String
+    var address: String
+    var image: String
 }
 

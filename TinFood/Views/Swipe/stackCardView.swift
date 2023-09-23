@@ -182,7 +182,7 @@ struct stackCardView: View {
             
             if !isShopBlocked {
                 ZStack {
-                    AsyncImage(url: URL(string: shop.profilePic )) { image in
+                    AsyncImage(url: URL(string: shop.image )) { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width - topOffset, height: size.height)
@@ -266,7 +266,7 @@ struct stackCardView: View {
                 } else if let data = snapshot?.data(),
                           let blockedShops = data["blockedShops"] as? [String],
                           let likedShops = data["likedShops"] as? [String],
-                          (blockedShops.contains(shop.name) || likedShops.contains(shop.name)) {
+                          (blockedShops.contains(shop.storename) || likedShops.contains(shop.storename)) {
                     isShopBlocked = true // Shop is blocked or liked
                 } else {
                     isShopBlocked = false // Shop is neither blocked nor liked
@@ -307,7 +307,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "blockedShops": FieldValue.arrayUnion([shop.name])
+            "blockedShops": FieldValue.arrayUnion([shop.storename])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")
@@ -324,7 +324,7 @@ struct stackCardView: View {
         let collectionName = "User"
         let db = Firestore.firestore()
         db.collection(collectionName).document(documentID).updateData([
-            "likedShops": FieldValue.arrayUnion([shop.name])
+            "likedShops": FieldValue.arrayUnion([shop.storename])
         ]) { error in
             if let error = error {
                 print("Error updating Firestore: \(error.localizedDescription)")

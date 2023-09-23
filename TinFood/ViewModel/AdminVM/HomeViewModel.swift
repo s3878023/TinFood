@@ -35,7 +35,7 @@ class HomeViewModel: ObservableObject {
         if searchText.isEmpty {
             return shops
         } else {
-            return shops.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            return shops.filter { $0.storename.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
@@ -68,7 +68,7 @@ class HomeViewModel: ObservableObject {
                 let name = data["name"] as? String ?? ""
                 let place = data["place"] as? String ?? ""
                 let profilePic = data["profilePic"] as? String ?? ""
-                return Shop(name: name, documentID: queryDocumentSnapshot.documentID, place: place, profilePic: profilePic)
+                return Shop(storename: name, documentID: queryDocumentSnapshot.documentID, address: place, image: profilePic)
             }
         }
     }
