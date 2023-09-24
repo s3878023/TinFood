@@ -10,14 +10,16 @@ import SwiftUI
 
 struct AppBarView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
     @State private var showActionSheet = false
     @State private var selection = "None"
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     var width: CGFloat // Add this property
 
-    init(viewModel: HomeViewModel, width: CGFloat) {
+    init(viewModel: HomeViewModel, width: CGFloat, loginViewModel: LoginViewModel) {
         self.viewModel = viewModel
         self.width = width
+        self.loginViewModel = loginViewModel
     }
 
     var body: some View {
@@ -51,6 +53,7 @@ struct AppBarView: View {
                 .confirmationDialog("Do you want to log out ?", isPresented: $showActionSheet, titleVisibility: .visible){
                     Button("Log out", role: .destructive){
                         selection = "Log out"
+                        loginViewModel.logout()
                     }
                 }
             }

@@ -280,6 +280,27 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            
+            // Clear the UserDefaults values
+            UserDefaults.standard.removeObject(forKey: "UUID")
+            UserDefaults.standard.removeObject(forKey: "loginSuccessAs")
+            
+            self.loginSuccess = false
+            self.userUUID = ""
+            self.loginSuccessAs = ""
+            
+            LoginView(loginViewModel: LoginViewModel())
+            
+            print("Logout successful")
+        } catch let error as NSError {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
+
 
 
 }

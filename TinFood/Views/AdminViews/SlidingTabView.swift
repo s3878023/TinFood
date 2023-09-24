@@ -10,9 +10,10 @@ import SwiftUI
 
 struct SlidingTabView: View {
     @StateObject var viewModel = HomeViewModel()
+    @ObservedObject var loginViewModel = LoginViewModel()
 
     var body: some View {
-        HomeView(viewModel: viewModel, loginViewModel: LoginViewModel())
+        HomeView(viewModel: viewModel, loginViewModel: loginViewModel)
     }
 }
 struct SlidingTabView_Previews: PreviewProvider {

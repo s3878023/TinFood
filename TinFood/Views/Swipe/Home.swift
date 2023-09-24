@@ -20,7 +20,7 @@ import FirebaseFirestore
 
 struct Home: View {
     @ObservedObject var homeData: homeViewModel = homeViewModel()
-//    @ObservedObject var loginViewModel: LoginViewModel
+    @ObservedObject var loginViewModel: LoginViewModel
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     var body: some View {
         NavigationView {
@@ -48,9 +48,9 @@ struct Home: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                             .foregroundColor(Color("swipe"))
                         
-                    
-                        Button{
-                        }label: {
+                        Button {
+                            loginViewModel.logout()
+                        } label: {
                             Image(systemName: "power.circle.fill")
                                 .resizable()
                                 .renderingMode(.template)
@@ -60,6 +60,7 @@ struct Home: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding()
                         .foregroundColor(Color("swipe"))
+
                     }
                     ZStack{
                         if let shops = homeData.displaying_shops{
@@ -142,6 +143,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(homeData: homeViewModel(), isDarkMode: false)
+        Home(homeData: homeViewModel(), loginViewModel: LoginViewModel(), isDarkMode: false)
     }
 }
+

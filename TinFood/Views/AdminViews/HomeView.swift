@@ -11,10 +11,10 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     @ObservedObject var loginViewModel: LoginViewModel
-
+    
     var body: some View {
         VStack(spacing: 0) {
-            AppBarView(viewModel: viewModel, width: UIScreen.main.bounds.width)
+            AppBarView(viewModel: viewModel, width: UIScreen.main.bounds.width, loginViewModel: loginViewModel)
                 .background(Color("background"))
                 .padding(.bottom)
 

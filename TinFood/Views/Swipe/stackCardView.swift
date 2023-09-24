@@ -209,7 +209,7 @@ struct stackCardView: View {
     
 struct stackCardView_Previews: PreviewProvider {
         static var previews: some View {
-            Home()
+            Home(loginViewModel: LoginViewModel())
         }
 }
 extension View {
