@@ -122,6 +122,7 @@ struct MerchantView: View {
                                                 .foregroundColor(.red)
                                                 .font(.system(size: 24))
                                         }
+                                        
                                     }
                                     .frame(height : 80)
                                     .frame(maxWidth: 350)
