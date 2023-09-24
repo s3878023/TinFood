@@ -121,7 +121,7 @@ struct LikedShop: View {
                             originalLikedShops = nil
                         }
                     }) {
-                        Image(systemName: isSortingAlphabetically ? "person.fill" : "person.fill")
+                        Image(systemName: isSortingAlphabetically ? "chart.bar.doc.horizontal" : "chart.bar.doc.horizontal")
                             .font(.title)
                     }
                 }
@@ -149,6 +149,7 @@ struct LikedShop: View {
                             Text(shop.storename)
                                 .font(.system(size: 16))
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 15)
                             Text(shop.address)
                                 .font(.subheadline)
                                 .foregroundColor(.gray)

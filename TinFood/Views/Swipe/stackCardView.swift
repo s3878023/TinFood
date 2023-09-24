@@ -1,10 +1,10 @@
-//////
-//////  stackCardView.swift
-//////  TinFood
-//////
-//////  Created by Đại Đức on 13/09/2023.
-//////
-////
+//
+//  stackCardView.swift
+//  TinFood
+//
+// Created by Đại Đức on 13/09/2023.
+//
+//
 
 import SwiftUI
 import Firebase
