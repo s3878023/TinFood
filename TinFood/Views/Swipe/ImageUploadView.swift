@@ -66,6 +66,7 @@ struct ImageUploadView: View {
             Button(uploadStatusText) {
                 uploadImage()
             }
+            .foregroundColor(Color("button"))
             .disabled(uiImage == nil)
         }
         if let imageURL = imageURL {

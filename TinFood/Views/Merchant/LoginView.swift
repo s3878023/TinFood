@@ -27,14 +27,16 @@ struct LoginView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Image("GwentIcon")
-                    .resizable()
-                    .scaledToFit()
+                Image("Logo")
+                    .offset(y:100)
+                    
+                Spacer()
                 
                 Text("Login")
                     .font(.largeTitle)
                     .bold()
                     .padding()
+                    .foregroundColor(Color("button"))
                 
                 TextField("Username", text: $username)
                     .padding()
@@ -62,12 +64,13 @@ struct LoginView: View {
                 Button("Login", action: {loginViewModel.login(username: self.username, password: self.password, role: self.loginAs)})
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.green)
+                    .background(Color("button"))
                     .cornerRadius(10)
                 Button("Register") {
                     isRegisterSheetPresented.toggle() // Toggle the sheet's visibility
                 }
                 .padding()
+                .foregroundColor(Color("button"))
                 .sheet(isPresented: $isRegisterSheetPresented) {
                     VStack {
                         
@@ -79,6 +82,7 @@ struct LoginView: View {
                             .font(.largeTitle)
                             .bold()
                             .padding()
+                            .foregroundColor(Color("button"))
                         
 //                        Text($profileImageUrl)
                         ImageUploadView(imageURL: $profileImageUrl)
@@ -160,9 +164,9 @@ struct LoginView: View {
                                 wrongRegisterPassword = 2
                             }
                         }
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("background"))
                             .frame(width: 300, height: 50)
-                            .background(Color.green)
+                            .background(Color("button"))
                             .cornerRadius(10)
                             .alert(isPresented: $loginViewModel.showRegisterAlert) {
                                 if registerPassword != registerConfirmPassword{
@@ -209,6 +213,7 @@ struct LoginView: View {
                 NavigationLink(destination: Home( loginViewModel: loginViewModel), isActive: $loginViewModel.loginSuccess) {
                 }
             )
+            .foregroundColor(Color("background"))
             .navigationBarBackButtonHidden(true)
         }
     }
