@@ -44,6 +44,7 @@ struct LoginView: View {
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                     .border(.red, width: CGFloat(wrongUsername))
+                    .foregroundColor(.black)
                 
                 SecureField("Password", text: $password)
                     .padding()
@@ -51,6 +52,8 @@ struct LoginView: View {
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                     .border(.red, width: CGFloat(wrongPassword))
+                    .foregroundColor(.black)
+
                 
                 Picker("Login as", selection: $loginAs) {
                     ForEach(loginOptions, id: \.self) { option in
@@ -93,12 +96,16 @@ struct LoginView: View {
                             .background(Color.black.opacity(0.05))
                             .cornerRadius(10)
                             .border(.red, width: CGFloat(wrongUsername))
+                            .foregroundColor(.black)
+
                         
                         SecureField("Password", text: $registerPassword)
                             .padding()
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.05))
                             .cornerRadius(10)
+                            .foregroundColor(.black)
+
 //                                        .border(.red, width: CGFloat(wrongPassword))
                         
                         SecureField("Confirm Password", text: $registerConfirmPassword)
@@ -107,6 +114,8 @@ struct LoginView: View {
                             .background(Color.black.opacity(0.05))
                             .cornerRadius(10)
                             .border(.red, width: CGFloat(wrongRegisterPassword))
+                            .foregroundColor(.black)
+
                         
                         // Use a conditional statement to display fields based on the selected value of the Picker
                         if registerAs == "Shop" {
@@ -116,6 +125,8 @@ struct LoginView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                                 .border(.red, width: CGFloat(wrongUsername))
+                                .foregroundColor(.black)
+
                             
                             TextField("Store Name", text: $registerStoreName)
                                 .padding()
@@ -123,6 +134,9 @@ struct LoginView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                                 .border(.red, width: CGFloat(wrongUsername))
+                                .foregroundColor(.black)
+                            
+
                         }
                         
                         Picker("Register as", selection: $registerAs) {
@@ -133,6 +147,8 @@ struct LoginView: View {
                             .pickerStyle(SegmentedPickerStyle())
                             .frame(width: 300, height: 35)
                             .cornerRadius(10)
+                            .foregroundColor(.black)
+
                         
                         Button("Register") {
                             // Check if the password and confirm password match
@@ -155,12 +171,8 @@ struct LoginView: View {
                                     }
                                 }
 
-                                
-//                                showRegisterAlert = true
                             } else {
-                                // Passwords don't match, handle this case (e.g., show an error message)
                                 print("Passwords do not match")
-//                                showRegisterAlert = true
                                 wrongRegisterPassword = 2
                             }
                         }
