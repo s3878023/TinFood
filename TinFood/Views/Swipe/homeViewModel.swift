@@ -17,102 +17,102 @@ class homeViewModel: ObservableObject {
     private var db = Firestore.firestore()
 
     init() {
-//        fetchShopData() // Fetch shop data from Firestore
+        fetchShopData() // Fetch shop data from Firestore
     }
     
-    func fetchShopData(completion: @escaping ([Shop]) -> Void) {
-        db.collection("Shops").getDocuments { (snapshot, error) in
-            if let error = error {
-                print("Error fetching data: \(error.localizedDescription)")
-                completion([])
-            } else {
-                if let snapshot = snapshot {
-                    var fetchedShops: [Shop] = []
-                    let group = DispatchGroup()
-
-                    for document in snapshot.documents {
-                        let data = document.data()
-                        let storename = data["storename"] as? String ?? ""
-                        let address = data["address"] as? String ?? ""
-                        let image = data["image"] as? String ?? ""
-
-                        // Fetch the FoodTest subcollection
-                        let foodTestsCollection = document.reference.collection("food")
-                        var foodTests: [FoodTest] = []
-
-                        group.enter()
-
-                        foodTestsCollection.getDocuments { (foodSnapshot, foodError) in
-                            if let foodError = foodError {
-                                print("Error fetching food data: \(foodError.localizedDescription)")
-                            } else if let foodDocuments = foodSnapshot?.documents {
-                                for foodDocument in foodDocuments {
-                                    let foodData = foodDocument.data()
-                                    let foodname = foodData["foodname"] as? String ?? ""
-                                    let price = foodData["price"] as? String ?? ""
-                                    let description = foodData["description"] as? String ?? ""
-                                    let foodImage = foodData["image"] as? String ?? ""
-                                    let category = foodData["category"] as? String ?? ""
-
-                                    let foodTest = FoodTest(
-                                        id: foodDocument.documentID,
-                                        foodname: foodname,
-                                        price: price,
-                                        description: description,
-                                        image: foodImage,
-                                        category: category
-                                    )
-                                    foodTests.append(foodTest)
-                                }
-                            }
-
-                            // Create the Shop object with food data
-                            let shop = Shop(
-                                id: document.documentID,
-                                storename: storename,
-                                address: address,
-                                image: image,
-                                foodTests: foodTests
-                            )
-
-                            // Append the shop to the fetchedShops array
-                            fetchedShops.append(shop)
-
-                            group.leave()
-                        }
-                    }
-
-                    group.notify(queue: .main) {
-                        // All asynchronous operations are complete
-                        completion(fetchedShops)
-                    }
-                }
-            }
-        }
-    }
-   
-//    func fetchShopData() {
+//    func fetchShopData(completion: @escaping ([Shop]) -> Void) {
 //        db.collection("Shops").getDocuments { (snapshot, error) in
 //            if let error = error {
 //                print("Error fetching data: \(error.localizedDescription)")
+//                completion([])
 //            } else {
 //                if let snapshot = snapshot {
-//                    self.fetch_shops = snapshot.documents.compactMap { document in
+//                    var fetchedShops: [Shop] = []
+//                    let group = DispatchGroup()
+//
+//                    for document in snapshot.documents {
 //                        let data = document.data()
-//                        _ = document.documentID
-//                        return Shop(
-//                            id : document.documentID,
-////                            id: data["id"] as? String ?? "",
-//                            storename: data["storename"] as? String ?? "",
-//                            address: data["address"] as? String ?? "",
-//                            image: data["image"] as? String ?? ""
-//                        )
+//                        let storename = data["storename"] as? String ?? ""
+//                        let address = data["address"] as? String ?? ""
+//                        let image = data["image"] as? String ?? ""
+//
+//                        // Fetch the FoodTest subcollection
+//                        let foodTestsCollection = document.reference.collection("food")
+//                        var foodTests: [FoodTest] = []
+//
+//                        group.enter()
+//
+//                        foodTestsCollection.getDocuments { (foodSnapshot, foodError) in
+//                            if let foodError = foodError {
+//                                print("Error fetching food data: \(foodError.localizedDescription)")
+//                            } else if let foodDocuments = foodSnapshot?.documents {
+//                                for foodDocument in foodDocuments {
+//                                    let foodData = foodDocument.data()
+//                                    let foodname = foodData["foodname"] as? String ?? ""
+//                                    let price = foodData["price"] as? String ?? ""
+//                                    let description = foodData["description"] as? String ?? ""
+//                                    let foodImage = foodData["image"] as? String ?? ""
+//                                    let category = foodData["category"] as? String ?? ""
+//
+//                                    let foodTest = FoodTest(
+//                                        id: foodDocument.documentID,
+//                                        foodname: foodname,
+//                                        price: price,
+//                                        description: description,
+//                                        image: foodImage,
+//                                        category: category
+//                                    )
+//                                    foodTests.append(foodTest)
+//                                }
+//                            }
+//
+//                            // Create the Shop object with food data
+//                            let shop = Shop(
+//                                id: document.documentID,
+//                                storename: storename,
+//                                address: address,
+//                                image: image,
+//                                foodTests: foodTests
+//                            )
+//
+//                            // Append the shop to the fetchedShops array
+//                            fetchedShops.append(shop)
+//
+//                            group.leave()
+//                        }
 //                    }
-//                    self.displaying_shops = self.fetch_shops
+//
+//                    group.notify(queue: .main) {
+//                        // All asynchronous operations are complete
+//                        completion(fetchedShops)
+//                    }
 //                }
 //            }
 //        }
 //    }
+   
+    func fetchShopData() {
+        db.collection("Shops").getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching data: \(error.localizedDescription)")
+            } else {
+                if let snapshot = snapshot {
+                    self.fetch_shops = snapshot.documents.compactMap { document in
+                        let data = document.data()
+                        _ = document.documentID
+                        return Shop(
+                            id : document.documentID,
+//                            id: data["id"] as? String ?? "",
+                            storename: data["storename"] as? String ?? "",
+                            address: data["address"] as? String ?? "",
+                            image: data["image"] as? String ?? ""
+                        )
+                    }
+                    self.displaying_shops = self.fetch_shops
+                }
+            }
+        }
+    }
 
     func getIndex(shop: Shop) -> Int {
         let index = displaying_shops?.firstIndex { currentShop in
