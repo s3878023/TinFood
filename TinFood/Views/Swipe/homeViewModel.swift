@@ -90,6 +90,7 @@ class homeViewModel: ObservableObject {
 //            }
 //        }
 //    }
+    
    
     func fetchShopData() {
         db.collection("Shops").getDocuments { (snapshot, error) in
@@ -196,4 +197,5 @@ class homeViewModel: ObservableObject {
             }
         }
     }
+    
 }

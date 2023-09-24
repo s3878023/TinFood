@@ -5,7 +5,6 @@
 //  Created by Nhật Quân on 23/09/2023.
 //
 
-import SwiftUI
 
 //struct LikedShop: View {
 //    @ObservedObject var viewModel: homeViewModel
@@ -31,7 +30,7 @@ import SwiftUI
 
 struct LikedShop: View {
     @ObservedObject var homeData: homeViewModel
-
+    @State private var searchText = ""
     init(homeData: homeViewModel) {
         self.homeData = homeData
         homeData.fetchLikedShops() // Fetch the liked shops when the view is initialized
@@ -43,6 +42,10 @@ struct LikedShop: View {
                 Text("Liked Shops")
                     .font(.title)
                     .padding(.top, 20) // Add padding to create space above the title
+                TextField("Search by Store Name", text: $searchText)
+                                   .textFieldStyle(RoundedBorderTextFieldStyle())
+                                   .padding(.horizontal, 15)
+                                   .padding(.bottom, 10)
 
                 ForEach(homeData.likedShops.indices, id: \.self) { index in
                     
@@ -83,6 +86,15 @@ struct LikedShop: View {
             .padding()
         }
     }
+    var filteredLikedShops: [Shop] {
+          if searchText.isEmpty {
+              return homeData.likedShops
+          } else {
+              return homeData.likedShops.filter { shop in
+                  return shop.storename.localizedCaseInsensitiveContains(searchText)
+              }
+          }
+      }
 }
 
 struct LikedShop_Previews: PreviewProvider {
