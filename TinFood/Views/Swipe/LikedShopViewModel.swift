@@ -1,9 +1,18 @@
-//
-//  LikedShopViewModel.swift
-//  TinFood
-//
-//  Created by Nhật Quân on 23/09/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 3
+  Author: Nguyen Duc Dai  ID: s3878023
+  Created  date: 15/09/2023.
+  Last modified: 25/09/2023
+  Acknowledgement:
+    RMIT Lecture Slides https://rmit.instructure.com/courses/121597
+    OpenChatAI: https://chat.openai.com/
+    Github: https://github.com/s3878023/TinFood/tree/dev
+    SFSymbols
+    StackOverFlow: https://stackoverflow.com/
+*/
 
 import SwiftUI
 import Firebase
@@ -32,7 +41,6 @@ class LikedShopViewModel: ObservableObject {
             } else {
                 if let data = snapshot?.data(),
                    let likedShopIds = data["likedShops"] as? [String] {
-                    // Fetch liked shops based on the shop IDs
                     let likedShopRefs = likedShopIds.map { self.db.collection("Shops").document($0) }
                     self.fetchShops(from: likedShopRefs)
                 }
@@ -41,18 +49,11 @@ class LikedShopViewModel: ObservableObject {
     }
 
     private func fetchShops(from shopRefs: [DocumentReference]) {
-        // Fetch the liked shops from Firestore based on the DocumentReferences
-        // You can use a similar approach as in your homeViewModel's fetchShopData
-        // to fetch and populate the likedShops array
-        // ...
-
-        // Example code for fetching liked shops
         for shopRef in shopRefs {
             shopRef.getDocument { (snapshot, error) in
                 if let error = error {
                     print("Error fetching liked shop document: \(error.localizedDescription)")
                 } else if let data = snapshot?.data() {
-                    // Parse the shop data and add it to the likedShops array
                     let likedShop = Shop(
                         id: snapshot!.documentID,
                         storename: data["storename"] as? String ?? "",
