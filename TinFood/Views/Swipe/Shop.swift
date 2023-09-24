@@ -27,5 +27,7 @@ struct Shop: Identifiable{
     var documentID: String?
     var address: String
     var image: String
+    
+    var foodTests: [FoodTest]?
 }
 

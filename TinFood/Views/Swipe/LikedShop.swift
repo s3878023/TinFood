@@ -30,23 +30,22 @@ import SwiftUI
 struct LikedShop: View {
 //    @ObservedObject var viewModel: homeViewModel
     @ObservedObject var homeData: homeViewModel
+
     init(homeData: homeViewModel) {
         self.homeData = homeData
         homeData.fetchLikedShops() // Fetch the liked shops when the view is initialized
     }
 
     var body: some View {
-        NavigationView {
+    
             List(homeData.likedShops) { shop in
                 // Display each liked shop as a list item
-                NavigationLink(destination: Testing()
-                ) {
                     Text(shop.storename)
                         .font(.system(size: 16))
-                }
+                Text(shop.address)
+                Text(shop.image)
             }
-            .navigationBarTitle("Liked Shops")
-        }
+        
     }
 }
 

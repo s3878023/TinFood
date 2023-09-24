@@ -143,7 +143,7 @@ struct MerchantView: View {
             
         }
         .navigationBarBackButtonHidden(true)
-         
+        
         
     }
 }  
