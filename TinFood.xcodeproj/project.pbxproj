@@ -21,7 +21,6 @@
 		4ACB1A352ABF5573004BF25D /* DetailedShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A342ABF5573004BF25D /* DetailedShopViewModel.swift */; };
 		4ACB1A372ABF59B3004BF25D /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A362ABF59B3004BF25D /* Testing.swift */; };
 		4ACB1A392ABF630F004BF25D /* Testingg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A382ABF630F004BF25D /* Testingg.swift */; };
-		4ACB1A3B2AC01A62004BF25D /* TestingVieww.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB1A3A2AC01A62004BF25D /* TestingVieww.swift */; };
 		4AE207F62AB6B03400BA8D1A /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */; };
 		4AE207F72AB6B03400BA8D1A /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE207F52AB6B03400BA8D1A /* Food.swift */; };
 		A16261732AB1E7FE00E6628A /* TinFoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16261722AB1E7FE00E6628A /* TinFoodApp.swift */; };
@@ -81,7 +80,6 @@
 		4ACB1A342ABF5573004BF25D /* DetailedShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedShopViewModel.swift; sourceTree = "<group>"; };
 		4ACB1A362ABF59B3004BF25D /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		4ACB1A382ABF630F004BF25D /* Testingg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testingg.swift; sourceTree = "<group>"; };
-		4ACB1A3A2AC01A62004BF25D /* TestingVieww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingVieww.swift; sourceTree = "<group>"; };
 		4AE207F42AB6B03400BA8D1A /* FoodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		4AE207F52AB6B03400BA8D1A /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		A162616F2AB1E7FE00E6628A /* TinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +312,6 @@
 				E7A115F32AB6A90800D36374 /* Shop.swift */,
 				4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */,
 				4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */,
-				4ACB1A3A2AC01A62004BF25D /* TestingVieww.swift */,
 			);
 			path = Swipe;
 			sourceTree = "<group>";
@@ -424,7 +421,6 @@
 				E76FA4222ABF037300EA8DBE /* GIFView.swift in Sources */,
 				CED8511A2AB44E3C00147E90 /* MerchantRowView.swift in Sources */,
 				A1A357202ABB2A7A00EA516A /* LoginViewModel.swift in Sources */,
-				4ACB1A3B2AC01A62004BF25D /* TestingVieww.swift in Sources */,
 				4A90AAE32ABDA0310057895C /* ShopTest.swift in Sources */,
 				CED8510A2AB44A5E00147E90 /* AppBarView.swift in Sources */,
 				4A90AADB2ABDA0100057895C /* ImageUploaddView.swift in Sources */,
