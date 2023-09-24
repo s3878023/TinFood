@@ -29,7 +29,7 @@ struct Home: View {
                                 .renderingMode(.template)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 22, height: 22)
-                                .foregroundColor(Color("button"))
+                                .foregroundColor(Color("swipe"))
                         })
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,7 +37,7 @@ struct Home: View {
                         Text("Discover")
                             .font(.title.bold())
                             .frame(maxWidth: .infinity, alignment: .center)
-                            .foregroundColor(Color("button"))
+                            .foregroundColor(Color("swipe"))
                         
                     
                         Button{
@@ -50,7 +50,7 @@ struct Home: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding()
-                        .foregroundColor(Color("button"))
+                        .foregroundColor(Color("swipe"))
                     }
                     ZStack{
                         if let shops = homeData.displaying_shops{
@@ -98,24 +98,13 @@ struct Home: View {
                                 .background(Color("myGreen"))
                                 .clipShape(Circle())
                         }
-//                        Button{
-//                           LikedShop(viewModel: homeViewModel())
-//                        }label: {
-//                            Image(systemName: "person.fill")
-//                                .font(.system(size: 20, weight: .bold))
-//                                .foregroundColor(.white)
-//                                .shadow(radius: 5)
-//                                .padding(15)
-//                                .background(Color("myYellow"))
-//                                .clipShape(Circle())
-//                        }
                         NavigationLink(destination: LikedShop(homeData: homeViewModel())) {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(.white)
                                 .shadow(radius: 5)  
                                 .padding(15)
-                                .background(Color("myYellow"))
+                                .background(Color("myYell"))
                                 .clipShape(Circle())
                         }
                     }

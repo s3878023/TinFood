@@ -60,24 +60,6 @@ struct stackCardView: View {
                             Spacer()
                         }
                     }
-//                    VStack {
-//                        Spacer()
-//                        HStack {
-//
-//                            VStack(alignment: .leading) {
-//                                Text(shop.storename)
-//                                    .font(.system(size: 38))
-//                                    .bold()
-//                                    .foregroundColor(Color.white)
-//                                Text(shop.address)
-//                                    .font(.system(size: 24))
-//                                    .bold()
-//                                    .foregroundColor(Color.white)
-//                            }
-//                            .padding()
-//                            Spacer()
-//                        }
-//                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .offset(x: offset)
@@ -129,12 +111,16 @@ struct stackCardView: View {
                         }
                     }
                 }
-                
+            }else{
+                Text("Please comback later when we can find more shops for you")
+                    .font(.caption.bold())
+                    .foregroundColor(.blue)
             }
         }
         .onAppear {
             checkIfShopIsBlocked()
         }
+
     }
     
     func getRotation(angle: Double)->Double{
@@ -153,10 +139,10 @@ struct stackCardView: View {
                 } else if let data = snapshot?.data(),
                           let blockedShops = data["blockedShops"] as? [String],
                           let likedShops =  data["likedShops"] as? [String],
-                          (blockedShops.contains(shop.storename) || likedShops.contains(shop.storename)) {
-                    isShopBlocked = true // Shop is blocked or liked
+                          (blockedShops.contains(shop.id) || likedShops.contains(shop.id)) {
+                    isShopBlocked = true
                 } else {
-                    isShopBlocked = false // Shop is neither blocked nor liked
+                    isShopBlocked = false
                 }
             }
         }
