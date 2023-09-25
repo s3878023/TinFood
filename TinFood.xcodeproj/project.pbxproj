@@ -296,8 +296,8 @@
 			children = (
 				E7A115ED2AB6A8C100D36374 /* homeViewModel.swift */,
 				E7A917112ABD80470039068D /* ImageUploadView.swift */,
-				E7A115F12AB6A8F300D36374 /* Home.swift */,
 				E7A115EF2AB6A8D900D36374 /* stackCardView.swift */,
+				E7A115F12AB6A8F300D36374 /* Home.swift */,
 				E7A115F32AB6A90800D36374 /* Shop.swift */,
 				4ACB1A2C2ABF325A004BF25D /* LikedShop.swift */,
 				4ACB1A2E2ABF366D004BF25D /* LikedShopViewModel.swift */,

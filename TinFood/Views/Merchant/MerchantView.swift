@@ -18,6 +18,7 @@ import Firebase
 
 struct MerchantView: View {
     //    @ObservedObject var foodModel = FoodViewModel()
+    @ObservedObject var loginViewModel: LoginViewModel
     @StateObject private var shopViewModel = ShopViewModel()
     @State private var showAddFoodSheet = false
     @State private var newFood = FoodTest()
@@ -58,9 +59,18 @@ struct MerchantView: View {
                                     }
                                     Spacer()
                                     
-                                    Image(systemName: "person.circle.fill")
-                                        .font(.system(size: 40))
-                                        .foregroundColor(Color("button"))
+                                    Button {
+                                        loginViewModel.logout()
+                                    } label: {
+                                        Image(systemName: "power.circle.fill")
+                                            .resizable()
+                                            .renderingMode(.template)
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 30, height: 30)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .padding()
+                                    .foregroundColor(Color("swipe"))
                                     
                                 }
                                 .frame(maxWidth: 350)
@@ -151,7 +161,7 @@ struct MerchantView: View {
 
 struct MerchantView_Previews: PreviewProvider {
     static var previews: some View {
-        MerchantView()
+        MerchantView(loginViewModel: LoginViewModel())
     }
 }
 //                          HStack{

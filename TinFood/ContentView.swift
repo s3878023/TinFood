@@ -19,7 +19,7 @@ struct ContentView: View {
                 case "User":
                     Home(homeData: homeData, loginViewModel: loginViewModel)
                 case "Shop":
-                    MerchantView()
+                    MerchantView(loginViewModel: loginViewModel)
                 case "Admin":
                     SlidingTabView(loginViewModel: loginViewModel)
                 default:
