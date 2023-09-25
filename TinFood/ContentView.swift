@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var homeData: homeViewModel = homeViewModel()
+    @StateObject private var loginViewModel = LoginViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            if loginViewModel.userUUID == "" || loginViewModel.registrationSuccess == true{
+                LoginView(loginViewModel: loginViewModel)
+            }else{
+                switch UserDefaults.standard.string(forKey: "loginSuccessAs"){
+                case "User":
+                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                case "Shop":
+                    MerchantView(loginViewModel: loginViewModel)
+                case "Admin":
+                    SlidingTabView(loginViewModel: loginViewModel)
+                default:
+                    Home(homeData: homeData, loginViewModel: loginViewModel)
+                }
+            }
+//            Text("User UUID: \(loginViewModel.userUUID)")
+//        Home(homeData: homeData, loginViewModel: loginViewModel)
     }
 }
 
@@ -24,3 +36,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
